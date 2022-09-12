@@ -1,0 +1,55 @@
+.Container {
+ width: 23%;
+ height: 300px;
+ margin: 10px;
+ overflow: hidden;
+ position: relative;
+}
+
+.ImageContainer {
+ width: 100%;
+ height: 100%;
+ position: relative;
+ opacity: 1;
+}
+
+.Info {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ right: 0;
+ left: 0;
+ background-color: rgba(000, 000, 000, 0.3);
+ border-radius: 10px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ opacity: 0;
+ transition: all 0.5s ease;
+}
+
+.Info:hover {
+ opacity: 1;
+}
+
+.Icon {
+ margin: 0px 10px;
+ background-color: white;
+ padding: 10px;
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+ transition: all 0.5s ease;
+}
+
+.Icon:hover {
+ transform: scale(1.2, 1.2);
+}
+
+@media only screen and (max-width:380px) {
+ .Container {
+  width: 90%
+ }
+}

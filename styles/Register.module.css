@@ -1,0 +1,61 @@
+.Container {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)),
+    url("https://images.pexels.com/photos/3214751/pexels-photo-3214751.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500") center;
+  background-repeat: no-repeat;
+  background-size: 100% 200%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Form {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.Title {
+  font-weight: 300;
+}
+
+.InputContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Input {
+  margin: 10px 0px;
+  padding: 10px 5px;
+  width: 45%;
+
+}
+
+.Agreement {
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.Button {
+  padding: 15px;
+  width: 30%;
+  font-size: 18px;
+  background-color: teal;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+@media only screen and (max-width:380px) {
+  .Form {
+    width: 90%;
+    padding: 5px 10px;
+  }
+}

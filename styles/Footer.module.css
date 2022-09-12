@@ -1,0 +1,87 @@
+.Container {
+ width: 100%;
+ display: flex;
+ padding: 0px 20px;
+ margin-top: 50px;
+ padding-bottom: 10px;
+ background-color: black;
+ color: white;
+}
+
+.Item {
+ flex: 1
+}
+
+.Title {
+ font-size: 35px;
+ font-weight: 400;
+}
+
+.Desc {
+ margin-bottom: 20px;
+ width: 85%;
+}
+
+.SocialLinks {
+ display: flex;
+}
+
+.Cyrcle {
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: white;
+ margin-right: 10px;
+ cursor: pointer;
+ transition: all 0.5s ease;
+}
+
+.Cyrcle:hover {
+ transform: scale(1.2, 1.2);
+}
+
+.Cyrcle:first-child {
+ background-color: blue;
+}
+
+.Cyrcle:nth-child(2) {
+ background-color: crimson;
+}
+
+.Cyrcle:last-child {
+ background-color: aqua;
+}
+
+.SubTitle {
+ font-size: 25px;
+ font-weight: 400;
+}
+
+.Ul {
+ list-style: none;
+ display: flex;
+ flex-wrap: wrap;
+ height: 70%;
+ justify-content: space-around;
+ padding: 0;
+}
+
+.Li {
+ width: 50%;
+ cursor: pointer;
+}
+
+.ContactItem {
+ display: flex;
+ align-items: center;
+ margin: 10px 0;
+}
+
+@media only screen and (max-width:380px) {
+ .Container {
+  flex-direction: column;
+ }
+}

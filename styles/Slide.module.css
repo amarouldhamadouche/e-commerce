@@ -1,0 +1,98 @@
+.Container {
+ width: 100%;
+ height: 100vh;
+ position: relative;
+ overflow: hidden
+}
+
+.Arrow {
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ background-color: #fff7f7;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+ opacity: 0.5;
+ cursor: pointer;
+ z-index: 2;
+}
+
+.Arrow:first-child {
+ left: 10px;
+}
+
+.Arrow:last-child {
+ right: 10px;
+}
+
+.Wrapper {
+ height: 100%;
+ width: 300vw;
+ display: flex;
+ align-items: center;
+ transition: all 1.5s ease;
+}
+
+.Slider {
+ width: 100vw;
+ height: 100vh;
+ display: flex;
+}
+
+.ImgContainer {
+ flex: 1;
+ height: 100%;
+ width: 100%;
+ position: relative;
+}
+
+.Cyrcle {
+ position: absolute;
+ height: 80%;
+ width: 80%;
+ border-radius: 50%;
+ top: 0;
+ transition: all 5s ease;
+}
+
+.Image {
+ object-fit: cover
+}
+
+.InfoContainer {
+ flex: 1;
+ padding: 0;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+
+.Title {
+ font-size: 40px;
+ font-weight: 500;
+ font-family: monospace;
+}
+
+.Desc {
+ font-size: 20px;
+ letter-spacing: 5px;
+ margin-bottom: 40px;
+}
+
+.Button {
+ padding: 10px 0;
+ width: 100px;
+ background-color: transparent;
+ cursor: pointer
+}
+
+@media only screen and (max-width:380px) {
+ .Container {
+  display: none;
+ }
+}

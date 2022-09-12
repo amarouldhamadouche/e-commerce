@@ -1,0 +1,54 @@
+.Container {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.Title {
+ font-size: 50px;
+ font-weight: 500;
+ font-family: monospace;
+}
+
+.Desc {
+ font-size: 24px;
+ color: grey;
+ text-align: center;
+}
+
+.InputContainer {
+ width: 75%;
+ display: flex;
+ justify-content: center;
+ margin: 30px 0;
+}
+
+.Input {
+ width: 50%;
+ border: none;
+ margin-right: 10px;
+ outline: none;
+}
+
+.Button {
+ padding: 5px 20px;
+ background-color: teal;
+ color: white;
+ border: none;
+ cursor: pointer;
+}
+
+@media only screen and (max-width:380px) {
+ .Title {
+  font-size: 35px;
+ }
+
+ .Desc {
+  font-size: 20px;
+ }
+
+ .InputContainer {
+  width: 95%;
+ }
+}

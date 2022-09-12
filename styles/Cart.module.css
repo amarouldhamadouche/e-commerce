@@ -1,0 +1,182 @@
+.Container {
+ padding: 0 20px;
+}
+
+.Title {
+ text-align: center;
+ font-weight: 400;
+}
+
+.Top {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.TopButton {
+ cursor: pointer;
+ font-weight: 500;
+ padding: 10px 5px;
+}
+
+.TopButton:first-child {
+ background-color: white;
+}
+
+.TopButton:last-child {
+ background-color: black;
+ color: white;
+}
+
+.TopInfo {
+ display: flex;
+}
+
+.TopText {
+ text-decoration: underline;
+ margin: 0px 10px;
+ cursor: pointer;
+}
+
+.Bottom {
+ display: flex;
+ margin-top: 30px;
+ padding: 10px;
+}
+
+.Products {
+ flex: 2;
+}
+
+.ProductContainer {
+ display: flex;
+}
+
+.Hr {
+ margin: 50px;
+ color: gray;
+}
+
+.ProductInfo {
+ display: flex;
+ flex: 1;
+}
+
+.ImageContainer {
+ width: 200px;
+ height: 200px;
+ padding: 0;
+ position: relative;
+}
+
+.Detail {
+ height: 100%;
+ margin-left: 10px;
+ padding: 10px 0;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+}
+
+.Color {
+ height: 30px;
+ width: 30px;
+ border-radius: 50%;
+ border: 2px solid black
+}
+
+.PriceInfo {
+ flex: 1;
+ padding: 0 10px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-around;
+}
+
+.AmountContainer {
+ display: flex;
+ align-items: center;
+}
+
+.Amount {
+ padding: 5px 10px;
+ margin: 0px 10px;
+ border: 2px solid black
+}
+
+.Price {
+ font-size: 35px;
+ font-weight: 300;
+}
+
+.SummaryContainer {
+ flex: 0.8;
+ display: flex;
+ flex-direction: column;
+ padding: 0px 10px;
+}
+
+.Total {
+ display: flex;
+ width: 100%;
+ margin: 50px 0;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.Total b {
+ font-size: 30px;
+ font-weight: 400;
+ letter-spacing: 5px;
+}
+
+.Total span {
+ font-size: 30px;
+ font-weight: 400;
+}
+
+.SummaryButton {
+ padding: 10px 0;
+ background-color: black;
+ color: white;
+ font-size: 20px;
+ cursor: pointer;
+}
+
+@media only screen and (max-width:380px) {
+ .TopButton {
+  font-weight: 200;
+  font-size: 12px;
+  padding: 5px 0;
+ }
+
+ .TopText {
+  margin: 0px 5px;
+  font-size: 12px;
+ }
+
+ .Bottom {
+  flex-direction: column;
+ }
+
+ .ProductContainer {
+  flex-direction: column;
+ }
+
+ .Detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+
+ .DetailItem {
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+ }
+
+
+}

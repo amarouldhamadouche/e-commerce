@@ -1,0 +1,28 @@
+.Container {
+ width: 100vw;
+ padding: 0px 20px;
+ display: flex;
+ flex-wrap: wrap;
+ overflow: hidden;
+ position: relative;
+}
+
+.Title {
+ width: 100%;
+ text-align: center;
+ font-size: 50px;
+ font-weight: 500;
+ font-family: monospace;
+}
+
+@media only screen and (max-width:380px) {
+ .Container {
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+ }
+
+ .Title {
+  font-size: 35px;
+ }
+}

@@ -1,0 +1,41 @@
+.Container {
+ padding: 0px 20px;
+ margin-bottom: 20px;
+}
+
+.Title {
+ font-size: 40px;
+ font-weight: 300;
+}
+
+.FilterContainer {
+ display: flex;
+ justify-content: space-between;
+}
+
+.FilterProduct {
+ display: flex;
+ align-items: center;
+}
+
+.FilterTitle {
+ font-size: 20px;
+ font-weight: 300;
+ margin-right: 10px;
+}
+
+.FilterSelect {
+ margin-right: 5px;
+ padding: 10px;
+}
+
+.SortProduct {
+ display: flex;
+ align-items: center;
+}
+
+@media only screen and (max-width:380px) {
+ .FilterContainer {
+  flex-direction: column;
+ }
+}
