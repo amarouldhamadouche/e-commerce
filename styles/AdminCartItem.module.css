@@ -1,0 +1,17 @@
+.container {
+ padding: 20px;
+}
+
+.table {
+ width: 100%;
+ border-spacing: 20px;
+}
+
+.trTitle {
+ font-size: 20px;
+}
+
+.tr {
+ text-align: center;
+ font-size: 20px;
+}

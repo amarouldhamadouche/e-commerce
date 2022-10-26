@@ -1,22 +1,23 @@
 .Container {
-  height: 100vh;
+  height: calc(100vh - 60px);
   width: 100vw;
-  background: linear-gradient(rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)),
-    url("https://images.pexels.com/photos/3214751/pexels-photo-3214751.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500") center;
-  background-repeat: no-repeat;
-  background-size: 100% 200%;
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+.imgContainer {
+  flex: 1;
+  width: 50%;
+  height: 50%;
+  position: relative;
 }
 
 .Form {
+  flex: 1;
   background-color: white;
-  padding: 20px;
+  padding: 20px 50px;
   display: flex;
   flex-direction: column;
-  width: 30%;
 }
 
 .Title {
@@ -26,11 +27,12 @@
 .Input {
   margin: 10px 0;
   padding: 10px;
+  width: 40%
 }
 
 .Button {
   padding: 15px;
-  width: 30%;
+  width: 15%;
   font-size: 18px;
   background-color: teal;
   color: white;
@@ -46,8 +48,32 @@
 }
 
 @media only screen and (max-width:380px) {
+  .Container {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+  .imgContainer {
+    flex: auto;
+    height: 150px;
+    width: 150px
+  }
+
   .Form {
     width: 90%;
     padding: 5px 10px;
+    align-items: center;
   }
+
+
+  .Input {
+    width: 60%
+  }
+
+  .Button {
+    width: 40%
+  }
+
 }

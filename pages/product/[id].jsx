@@ -1,70 +1,107 @@
 import {useState} from 'react'
 import styles from '../../styles/Product.module.css'
-import Navbar from '../../components/Navbar'
+import axios from 'axios'
 import Anounecement from '../../components/Anounecement'
 import NewsLetter from '../../components/NewsLetter'
 import Footer from '../../components/Footer'
 import Image from 'next/image'
 import { Add, Remove } from '@material-ui/icons'
+import {useDispatch} from 'react-redux'
+import {addProduct} from '../../redux/cartRedux'
+import { useRouter } from 'next/router'
+import Navbar from '../../components/Navbar.jsx'
 
-const Product = () => {
- const [amount,setAmount] = useState(1)
- const [selectedColor,setSelectedColor] = useState()
- const color = ['white','blue','black']
+const Product = ({token,product}) => {
+ const [quantity,setquantity] = useState(1)
+ const [color,setcolor] = useState(product?.colors[0])
+ const [size,setSize] = useState(product?.Sizes[0])
+ const [heroImage,setHeroImage] = useState(product?.img[0])
+ const dispatch = useDispatch()
+ const router = useRouter()
+
+ const handleAddToCart = ()=>{
+  
+   const Product = {
+    product:product,
+    quantity,
+    color,
+    size,
+   }
+   dispatch(addProduct(Product))
+   router.push('/cart')
+ }
+
   return (
     <div>
-     <Navbar/>
+      <Navbar token={token}/>
      <Anounecement/>
      <div className={styles.Container}>
       <div className={styles.Left}>
-       <div className={styles.ImageContainer}>
-        <Image src='https://images.pexels.com/photos/13085604/pexels-photo-13085604.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load' alt='' layout='fill' objectFit='contain'/>
+       <div className={styles.heroImageContainer}>
+        <Image src={heroImage} alt='' layout='fill' objectFit='contain'/>
+       </div>
+       <div style={{width:"100%",height:"50px",display:"flex",justifyContent:'center'}}>
+        
+        {product.img.filter(i=>i!==heroImage).map((pi,i)=>
+           (
+            <div key={i} className={styles.authorImages} onClick={()=>setHeroImage(pi)}>
+              <Image src={pi} alt='' layout='fill' objectFit='cover'/>
+            </div>
+          )
+        )}
        </div>
       </div>
       <div className={styles.Right}>
        <h1 className={styles.Title}>
-        Lacost
+        {product?.title}
        </h1>
        <div className={styles.Desc}>
-        chalenjaire lacoste originale tedrob fi tremtak ma tel9ach khotha chalenjaire lacoste originale tedrob fi tremtak ma tel9ach khotha 
-        chalenjaire lacoste originale tedrob fi tremtak ma tel9ach khotha 
-        chalenjaire lacoste originale tedrob fi tremtak ma tel9ach khotha 
+        {product?.desc}
        </div>
        <span className={styles.Price}>
-        4000 DA
+        {product?.price} DA
        </span>
        <div className={styles.FilterContainer}>
         <div className={styles.Filter}>
          <h2 className={styles.FilterTitle}>Color :</h2>
-         <div className={styles.FilterColor} onClick={()=>setSelectedColor(1)} style={{backgroundColor:color[0],  height:selectedColor==1 && '40px', width:selectedColor==1 && '40px' }} ></div>
-         <div className={styles.FilterColor} onClick={()=>setSelectedColor(2)} style={{backgroundColor:color[1], height:selectedColor==2 && '40px', width:selectedColor==2 && '40px' }}></div>
-         <div className={styles.FilterColor} onClick={()=>setSelectedColor(3)} style={{backgroundColor:color[2], height:selectedColor==3 && '40px', width:selectedColor==3 && '40px' }}></div>
+         {product?.colors.map((c,i)=>(
+          <div key={i} className={styles.FilterColor} onClick={()=>setcolor(c)} style={{backgroundColor:c,  height:color==c && '40px', width:color==c && '40px' }} ></div>
+         ))}
+         
         </div>
         <div className={styles.Filter}>
          <h2 className={styles.FilterTitle}>Size :</h2>
-         <select className={styles.FilterSize}>
-         <option className={styles.SizeOption}>XS</option>
-          <option className={styles.SizeOption}>S</option>
-          <option className={styles.SizeOption}>L</option>
-          <option className={styles.SizeOption}>M</option>
-          <option className={styles.SizeOption}>XL</option>
+         <select className={styles.FilterSize} onChange={(e)=>setSize(e.target.value)}>
+          {product?.Sizes.map((s,i)=>(
+             <option key={i} className={styles.SizeOption} value={s}>{s}</option>
+          ))}
          </select>
         </div>
        </div>
        <div className={styles.AddContainer}>
         <div className={styles.AmountContainer}>
-         <Remove style={{cursor:'pointer'}} onClick={()=>setAmount(amount-1)}/>
-         <div className={styles.Amount}>{amount}</div>
-         <Add style={{cursor:'pointer'}} onClick={()=>setAmount(amount+1)}/>
+         <Remove style={{cursor:'pointer'}} onClick={()=>quantity!=1 && setquantity(quantity-1)}/>
+         <div className={styles.Amount}>{quantity}</div>
+         <Add style={{cursor:'pointer'}} onClick={()=>setquantity(quantity+1)}/>
         </div>
-        <button className={styles.AddButton}>ADD TO CART</button>
+        <button className={styles.AddButton} onClick={()=>handleAddToCart()}>ADD TO CART</button>
        </div>
       </div>
      </div>
-     <NewsLetter/>
      <Footer/>
     </div>
   )
+}
+
+export const getServerSideProps = async(ctx)=>{
+  const cookies = ctx.req?.cookies || null
+  const res = await axios.get(`http://localhost:3000/api/product/find/${ctx.query.id}`)
+  return{
+  props:{
+      token : cookies?.token || null,
+      product:res.data
+    }
+  }
 }
 
 export default Product

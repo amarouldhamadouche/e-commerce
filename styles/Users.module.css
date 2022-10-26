@@ -1,0 +1,21 @@
+.container {}
+
+.table {
+ width: 100%;
+ border-spacing: 20px;
+}
+
+.tr {
+ font-size: 18px;
+ text-align: center;
+}
+
+.button {
+ padding: 10px;
+ margin: 0px 5px;
+ font-size: 15px;
+ border: none;
+ background-color: teal;
+ color: white;
+ cursor: pointer;
+}

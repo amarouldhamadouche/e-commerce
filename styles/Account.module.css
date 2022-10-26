@@ -1,0 +1,158 @@
+.Container {
+ min-height: calc(100vh - 200px);
+ padding: 20px 100px;
+ background-color: whitesmoke;
+
+}
+
+.title {
+ font-size: 30px;
+ font-weight: 500;
+}
+
+.wrapper {
+ padding-top: 20px;
+ display: flex;
+}
+
+.left {
+ flex: 1
+}
+
+.right {
+ flex: 3;
+ background-color: white;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+.ul {
+ list-style: none;
+ padding: 0px;
+}
+
+.li {
+ margin: 10px 0;
+ width: 60%;
+ padding: 5px 0;
+ padding-left: 5px;
+ font-size: 18px;
+ font-weight: 500;
+ cursor: pointer;
+}
+
+.subTitle {
+ font-size: 25px;
+ font-weight: 500;
+ width: 90%;
+}
+
+.detailItemTitle {
+ font-size: 18px;
+ font-weight: 500;
+ width: 90%;
+}
+
+.hr {
+ background-color: whitesmoke;
+ width: 90%;
+}
+
+.form {
+ padding: 10px;
+ display: flex;
+ width: 70%;
+ flex-wrap: wrap;
+ justify-content: space-between;
+}
+
+.radioLign {
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ margin: 10px 0;
+ padding: 5px 0;
+}
+
+.radioLabel {
+ text-align: center;
+ display: flex;
+ align-items: center;
+ font-size: 20px;
+}
+
+.radioInput {
+ width: 18px;
+ height: 18px;
+ margin-right: 10px;
+ cursor: pointer;
+}
+
+.delete {
+ color: red;
+ cursor: pointer;
+}
+
+.label {
+ font-weight: 500;
+}
+
+.input {
+ padding: 10px 5px;
+ background-color: whitesmoke;
+
+}
+
+.inputContainer {
+ display: flex;
+ flex-direction: column;
+ width: 45%;
+ margin: 5px 0
+}
+
+.buttonContainer {
+ width: 100%;
+ margin-top: 10px;
+}
+
+.button {
+ padding: 10px 50px;
+ background-color: teal;
+ color: white;
+ font-weight: 400;
+ border: none;
+ cursor: pointer;
+}
+
+@media only screen and (max-width:380px) {
+ .Container {
+  padding: 10px 0px
+ }
+
+ .title {
+  text-align: center;
+ }
+
+ .wrapper {
+  flex-direction: column;
+ }
+
+ .ul {
+  display: flex
+ }
+
+ .li {
+  margin: 10px 10px
+ }
+
+ .left {
+  width: 100%
+ }
+
+ .form {
+  width: 90%
+ }
+}

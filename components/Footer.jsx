@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Mail, Phone, Room, Twitter } from '@material-ui/icons'
 import styles from'../styles/Footer.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -13,9 +14,11 @@ const Footer = () => {
         there are many there are many there are many there are many there are many there are many there are many there are many there are many there are many there are many there are many there are many
        </div>
        <div className={styles.SocialLinks}>
+        <Link href={"https://www.facebook.com/profile.php?id=100007073805383"} passHref>
        <div className={styles.Cyrcle}>
         <Facebook/>
        </div>
+       </Link>
        <div className={styles.Cyrcle}>
         <Instagram/>
        </div>

@@ -1,0 +1,47 @@
+.container {}
+
+.trTitle {
+ font-size: 18px;
+}
+
+.table {
+ width: 100%;
+ border-spacing: 20px;
+ margin-bottom: 50px
+}
+
+.tr {
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ font-size: 18px;
+}
+
+.button {
+ padding: 10px;
+ font-size: 15px;
+ cursor: pointer;
+ margin: 0 5px;
+}
+
+.button:first-child {
+ background-color: teal;
+ color: white;
+ border: none;
+}
+
+.button:last-child {
+ background-color: whitesmoke;
+ border: 1px solid teal;
+ color: teal;
+}
+
+.rejectedButton {
+ padding: 10px;
+ font-size: 15px;
+ cursor: pointer;
+ margin: 0 5px;
+ background-color: whitesmoke;
+ border: 1px solid crimson;
+ color: crimson;
+}

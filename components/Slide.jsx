@@ -6,7 +6,7 @@ import Image from 'next/Image'
 const Slide = () => {
  const [index,setIndex] = useState(0)
 
- const cyrcleColor = ['crimson','teal','blue']
+ const cyrcleColor = ['black','teal','pink']
  const handleClick = (direction)=>{
    if(direction==="l"){
     setIndex(index>0 ? index-1 : 2)
@@ -22,8 +22,8 @@ const Slide = () => {
      <div className={styles.Wrapper} style={{ transform:`translateX(${index*-100}vw)`}}>
       <div className={styles.Slider}>
        <div className={styles.ImgContainer}>
-       <div style={{position:'relative', height:'80%',width:"80%",zIndex: 9999}}>
-         <Image  src="https://images.pexels.com/photos/13085604/pexels-photo-13085604.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" layout="fill" objectFit="cover"/>
+       <div style={{position:'relative', height:'90%',width:"90%",zIndex: 9999}}>
+         <Image  src="https://i.ibb.co/wLPrJ3L/My-project-2.png" alt="My-project-1"  layout="fill" objectFit="contain"/>
          </div>
          <div className={styles.Cyrcle} style={{backgroundColor:cyrcleColor[index]}}>
 
@@ -44,8 +44,8 @@ const Slide = () => {
       </div>
       <div className={styles.Slider}>
        <div className={styles.ImgContainer}>
-         <div style={{position:'relative', height:'80%',width:"80%",zIndex: 9999}}>
-         <Image className={styles.Image} src="https://images.pexels.com/photos/13085604/pexels-photo-13085604.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" layout="fill" object-fit="cover"/>
+         <div style={{position:'relative', height:'90%',width:"90%",zIndex: 9999}}>
+         <Image className={styles.Image} src="https://i.ibb.co/X88qsfM/My-project.png" alt="My-project-1" alt="" layout="fill" objectFit="contain"/>
          </div>
          <div className={styles.Cyrcle} style={{backgroundColor:cyrcleColor[index]}}>
 
@@ -67,7 +67,7 @@ const Slide = () => {
       <div className={styles.Slider}>
        <div className={styles.ImgContainer}>
        <div style={{position:'relative', height:'80%',width:"80%",zIndex: 9999}}>
-         <Image className={styles.Image} src="https://images.pexels.com/photos/13085604/pexels-photo-13085604.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" layout="fill" object-fit="cover"/>
+         <Image className={styles.Image} src="https://i.ibb.co/pXvCP7T/My-project-6.png" alt="" layout="fill" object-fit="cover"/>
          </div>
          <div className={styles.Cyrcle} style={{backgroundColor:cyrcleColor[index]}}>
 

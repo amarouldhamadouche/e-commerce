@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+import cookie from 'cookie'
 const jwt = require('jsonwebtoken')
 import dbConnect from "../../../util/mongo";
 import User from "../../../models/User"
@@ -19,9 +20,14 @@ export default async function handler(req, res) {
      id:user._id,
      isAdmin:user.isAdmin
    },
-   process.env.JWT_SEC,
-   {expiresIn:"3d"})
-   res.status(200).json({...others,accessToken})
+   process.env.JWT_SEC
+   )
+   res.setHeader('Set-Cookie',
+   cookie.serialize('token',accessToken,{
+    sameSite:'strict',
+    path : '/'
+ }))
+   res.status(200).json({...others})
   }
   catch(err){
    res.status(500).json(err)

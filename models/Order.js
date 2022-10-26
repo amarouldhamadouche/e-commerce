@@ -14,6 +14,14 @@ const OrderSchema = new mongoose.Schema({
     quantity:{
      type:Number,
      default:1
+    },
+    color:{
+      type:[String],
+      required:true
+    },
+    size:{
+      type:[String],
+      required:true
     }
    }
   ],
@@ -25,9 +33,17 @@ const OrderSchema = new mongoose.Schema({
    type:Object,
    required:true
   },
+  payementMethod:{
+    type:String,
+    required:true
+  },
   status:{
    type:Number,
    default:0
+  },
+  cartId:{
+    type:String,
+    required:true
   }
  
 },{

@@ -9,14 +9,23 @@
  flex: 1;
  display: flex;
  align-items: center;
+ flex-direction: column;
  justify-content: center;
 
 }
 
-.ImageContainer {
+.heroImageContainer {
  width: 100%;
  height: 100%;
  position: relative;
+}
+
+.authorImages {
+ width: 50px;
+ height: 50px;
+ position: relative;
+ margin: 20px 5px;
+ cursor: pointer;
 }
 
 .Right {

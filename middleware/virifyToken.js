@@ -1,5 +1,4 @@
 import jwt from 'jsonwebtoken';
-import { useStyleRegistry } from 'styled-jsx';
 
 const virifyToken = (handler) => {
   return async (req, res) => {
@@ -13,7 +12,7 @@ const virifyToken = (handler) => {
       return handler(req, res)
      })
     }else{
-     res.status(400).json('you are not allowed to do do this')
+     res.status(400).json('there is no token')
     }
     
    }

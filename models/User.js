@@ -6,6 +6,16 @@ const UserSchema = new mongoose.Schema({
   maxlength:60,
   unique:true
  },
+  name:{
+  type:String,
+  required:true,
+  maxlength:60,
+ },
+  lastName:{
+  type:String,
+  required:true,
+  maxlength:60,
+ },
  email:{
   type:String,
   unique:true
@@ -18,6 +28,37 @@ const UserSchema = new mongoose.Schema({
   type:Boolean,
   default:false
  },
+ adresses:[
+  {
+   wilaya:{
+    type:String,
+    required:true
+   },
+   commune:{
+    type:String,
+    required:true
+   },
+   street:{
+    type:String,
+    required:true
+   }
+  },
+ ],
+ principleAddress:{
+  type:String,
+  required:false,
+ },
+ phoneNumber:{
+  type:String,
+ },
+ hasPaid: {
+   type:Number,
+   default:0
+ },
+ isBlocked: {
+  type:Boolean,
+  defalut: false
+ }
 },{
  timestamps:true
 })
