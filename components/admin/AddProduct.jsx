@@ -1,3 +1,4 @@
+/* eslint-disable */
 import styles from '../../styles/AddProduct.module.css'
 import axios from 'axios'
 import {useState,useEffect} from 'react'
@@ -25,7 +26,7 @@ const AddProduct = ({token,setAdd,setProducts}) => {
    const res = await axios.get("http://localhost:3000/api/categories",{headers:{token:token}})
    setCategories(res.data)
   }catch(err){
-   console.log(err)
+    
   }
  }
   fetchCat()
@@ -42,7 +43,6 @@ const AddProduct = ({token,setAdd,setProducts}) => {
     setCategories((prev)=>[...prev,res.data])
     setAddCategorie(false)
    }catch(err){
-    console.log(err)
    }
  }
 
@@ -59,9 +59,7 @@ const AddProduct = ({token,setAdd,setProducts}) => {
     urls = [...urls,cloudinaryRes.data.url]
     urls.length == file.length && handleAddNewProduct(urls)
    }catch(err){
-    console.log(err)
    }
-   console.log('urls',urls)
   })
  }
 
@@ -79,7 +77,6 @@ const AddProduct = ({token,setAdd,setProducts}) => {
     const res = await axios.post('http://localhost:3000/api/product',product,{headers:{token:token}})
     handleSell(res.data)
    }catch(err){
-     console.log(urls)
      setIsFetching(false)
      setError(true)
    }
@@ -88,13 +85,11 @@ const AddProduct = ({token,setAdd,setProducts}) => {
  const handleSell = async(product)=>{
   try{
     const res =  await axios.post('http://localhost:3000/api/sales/',{ProductId:product._id,quantity:0},{headers:{token:token}})
-    console.log(res)
+   
     setProducts((prev)=>[...prev,product])
     setAdd(false)
     setIsFetching(false)
   }catch(err){
-    console.log(err,"orderErr")
-    console.log(order.products)
   }
  }
 

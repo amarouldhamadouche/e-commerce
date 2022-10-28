@@ -1,3 +1,4 @@
+/* eslint-disable */
 import styles from '../../styles/AddProduct.module.css'
 import axios from 'axios'
 import {useState,useEffect} from 'react'
@@ -26,7 +27,6 @@ const EditProduct = ({token,setEdit,setProducts,product}) => {
    const res = await axios.get("http://localhost:3000/api/categories",{headers:{token:token}})
    setCategories(res.data)
   }catch(err){
-   console.log(err)
   }
  }
   fetchCat()
@@ -43,7 +43,6 @@ const EditProduct = ({token,setEdit,setProducts,product}) => {
     setCategories((prev)=>[...prev,res.data])
     setAddCategorie(false)
    }catch(err){
-    console.log(err)
    }
  }
 

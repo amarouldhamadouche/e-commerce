@@ -11,7 +11,7 @@ const [product,setProduct] = useState([])
      const res = await axios.get(`http://localhost:3000/api/product/find/${Product.productId}`)
      setProduct(res.data)
     }catch(err){
-     console.log(err)
+      
     }
    }
    fetchProduct()

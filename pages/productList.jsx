@@ -36,7 +36,7 @@ const ProductList = ({token,products}) => {
 
   const handleFilters = (e)=>{
     setFilters({...filters,[e.target.name]:e.target.value})
-    console.log(filters,'filters')
+    
   }
   return (
     <div> 

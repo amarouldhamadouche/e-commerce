@@ -77,7 +77,7 @@ const OrderAlert = ({setCheckOut,token,setShowBlockedToast})=>{
       dispatch(orderTheCart())
       Router.push('/order')
     }catch(err){
-      console.log(err)
+      
     }
   }
 
@@ -100,7 +100,7 @@ const OrderAlert = ({setCheckOut,token,setShowBlockedToast})=>{
        })
        createACart()
       }catch(err){
-        console.log(err)
+        
       }
     }
     stripeToken && ePayement()

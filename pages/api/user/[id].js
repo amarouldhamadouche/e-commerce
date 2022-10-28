@@ -17,16 +17,13 @@ const handler = async(req,res)=>{
   }
   try{
    if(req.user.id==id || req.user.isAdmin){ 
-    console.log(req.body)
     const user = await User.findByIdAndUpdate(id,req.body,{new:true})
     res.status(200).json(user)
-    console.log(req.body)
    }else{
     res.status(400).json('you are not allowed')
    }
    }catch(err){
      res.status(502).json(err,'err')
-     console.log(req.body)
 }
  }
 

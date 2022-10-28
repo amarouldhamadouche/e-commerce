@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {useState,useEffect} from 'react'
 import axios from 'axios'
 import styles from '../../styles/OrderAdmin.module.css'
@@ -11,7 +12,6 @@ const AdminContact = ({token}) => {
     const res = await axios.get("http://localhost:3000/api/contact",{headers:{token:token}})
     setContacts(res.data.sort((a,b)=>new Date(b.createdAt) - new Date(a.createdAt)))
    }catch(err){
-    console.log(err)
    } 
   }
   fetchContacts()

@@ -11,7 +11,7 @@ import Footer from '../components/Footer'
 const Account = ({token}) => {
  const [menu,setMenu] = useState('My details') 
  const currentUser = useSelector((state)=>state.user?.currentUser)
- console.log(currentUser)
+ 
  const dispatch = useDispatch()
  useEffect(()=>{
    if(!currentUser || !token){

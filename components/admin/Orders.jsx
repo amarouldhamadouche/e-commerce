@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {useState,useEffect} from 'react'
 import styles from '../../styles/OrderAdmin.module.css'
 import axios from 'axios'
@@ -14,7 +15,6 @@ const AdminOrders = ({token,Orders,userId,setOrders}) => {
         const res = await axios.get(`http://localhost:3000/api/order?userId=${userId}`,{headers:{token:token}})
         setUsersOrders(res.data)
       }catch(err){
-        console.log(err)
       }
     }
     userId && fetchUserOrder()

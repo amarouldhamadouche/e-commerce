@@ -1,3 +1,4 @@
+/* eslint-disable */
 import styles from '../../styles/Admin.module.css'
 import axios from 'axios'
 import {useState} from 'react'
@@ -78,14 +79,14 @@ export  const getServerSideProps = async(ctx)=>{
   try{
     res = await axios.get('http://localhost:3000/api/product/find')
   }catch(err){
-    console.log(err)
+    
   }
   let res1
   try{
     res1 = await axios.get('http://localhost:3000/api/order?all=true',{headers:{token:cookies?.token}})
-    res1.data ? console.log('res',res1.data) : console.log('dffd')
+  
   }catch(err){
-    console.log(err)
+    
   }
 
  return{

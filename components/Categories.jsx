@@ -1,3 +1,4 @@
+/* eslint-disable */
 import CategorieItem from "./CategorieItem"
 import styles from "../styles/Categories.module.css"
 import {useState,useEffect} from 'react'
@@ -11,9 +12,9 @@ export default function Categories(){
       try{
        const res = await axios.get('http://localhost:3000/api/categories')
        setCategories(res.data)
-       console.log(res.data,'cas')
+       
       }catch(err){
-        console.log(err)
+        
       }
     }
     fetchCats()

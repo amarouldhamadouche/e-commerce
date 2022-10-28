@@ -1,3 +1,4 @@
+/* eslint-disable */
 import styles from '../../styles/Admin.module.css'
 import Image from 'next/image'
 import EditProduct from './EditProduct'
@@ -19,7 +20,6 @@ const ProductList = ({Products,token}) => {
     setProducts((prev)=>[...prev.filter((p)=>p._id!==id)])
    }
   }catch(err){
-    console.log(err)
   }
 }
   return (

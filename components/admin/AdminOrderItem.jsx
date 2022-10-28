@@ -1,3 +1,4 @@
+/* eslint-disable */
 import styles from '../../styles/OrderAdmin.module.css'
 import {useState,useEffect} from 'react'
 import axios from 'axios'
@@ -13,7 +14,6 @@ const AdminOrderItem = ({order,token,setOrders,usersOrders,setUsersOrders}) => {
     const res = await axios.get(`http://localhost:3000/api/user/${order.userId}`,{headers:{token:token}})
     setUser(res.data)
    }catch(err){
-    console.log(err,'err')
    }
    
   }
@@ -24,7 +24,6 @@ const AdminOrderItem = ({order,token,setOrders,usersOrders,setUsersOrders}) => {
   try{
     axios.put(`http://localhost:3000/api/user/${user._id}`,{hasPaid:user.hasPaid + order.amount},{headers:{token:token}})
     }catch(err){
-      console.log(err)
     }
   }
 
@@ -39,15 +38,13 @@ const AdminOrderItem = ({order,token,setOrders,usersOrders,setUsersOrders}) => {
     i==2 && updateUser()
     i==2 && handleSell(res.data) 
   }catch(err){
-    console.log(err)
   }
  }
 
  const handleSell =(order)=>{
   try{
     const res = order.products.forEach(async(p)=>await axios.post('http://localhost:3000/api/sales/',{ProductId:p.productId,quantity:p.quantity},{headers:{token:token}}))
-    console.log(res) }catch(err){
-    console.log(err)
+    }catch(err){
   }
  }
 

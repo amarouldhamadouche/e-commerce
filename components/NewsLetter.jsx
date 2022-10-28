@@ -21,7 +21,7 @@ const NewsLetter = ({token}) => {
      setMessage('')
      setTimeout(()=>setSuccess(false),'5000')
     }catch(err){
-      console.log(err)
+      
       setError(true)
       setTimeout(()=>setError(false),'5000')
       

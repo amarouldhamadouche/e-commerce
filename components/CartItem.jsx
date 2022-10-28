@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react'
 import {useState,useEffect} from 'react'
 import styles from '../styles/Cart.module.css'
@@ -48,7 +49,7 @@ import { decreaseProduct,increaseProduct,removeProduct } from '../redux/cartRedu
 </div>
 </div>
 <div className={styles.buttonContainer}>
-  <button onClick={()=>{dispatch(removeProduct(p));console.log(p)}} className={styles.button}>REMOVE ITEM FROM THE CART</button>
+  <button onClick={()=>{dispatch(removeProduct(p))}} className={styles.button}>REMOVE ITEM FROM THE CART</button>
 </div>
 <hr className={styles.Hr}></hr>
 </>

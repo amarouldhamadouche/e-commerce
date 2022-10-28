@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react'
 import {
  LineChart,
@@ -25,20 +26,19 @@ const Chart = ({token,productId}) => {
      setData([])
      setSaleData(res.data)
      !productId ? fetchProducts(res.data) : setData([{month:res.data[0]._id,total : res.data[0].total}])
-     console.log(res.data,"sta")
+     
      
     }catch(err){
-     console.log(err)
+    
     }
    }
    const fetchProducts = async(Data)=>{
     if(activeButton=="products"){
      try{ 
       Data.forEach(async(s)=>{ await axios.get(`http://localhost:3000/api/product/find/${s._id}`).then((res)=>{
-      setData((prev)=>[...prev,{name:!productId && res?.data?.title || "no disponible",total:s.total}])}).catch((err)=>{console.log(err)})
+      setData((prev)=>[...prev,{name:!productId && res?.data?.title || "no disponible",total:s.total}])}).catch((err)=>{})
      })
     }catch(err){
-      console.log(err)
      }
     }else{
      Data.forEach((d)=> setData((prev)=>[...prev,{month:d._id,total:d.total}]))
@@ -53,7 +53,6 @@ const Chart = ({token,productId}) => {
  },[token,productId,activeButton])
 
  useEffect(()=>{
-  console.log(data,'data')
  },[data])
 
   return (

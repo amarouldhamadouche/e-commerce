@@ -1,4 +1,5 @@
 
+/* eslint-disable */
 import {useState,useEffect} from 'react'
 import axios from 'axios'
 import styles from '../../styles/Users.module.css'
@@ -18,7 +19,6 @@ const Users = ({token,setOrders}) => {
      const res = await axios.get(`http://localhost:3000/api/user/`,{headers:{token:token}})
      setUsers(res.data)
     }catch(err){
-     console.log(err)
     }
    }
    fetchUsers()

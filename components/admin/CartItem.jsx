@@ -1,3 +1,4 @@
+/* eslint-disable */
 import axios from 'axios'
 import {useState,useEffect} from 'react'
 import Image from 'next/image'
@@ -11,10 +12,7 @@ const CartItem = ({c}) => {
    try{
     const res = await axios.get(`http://localhost:3000/api/product/find/${c.productId}`)
     setProduct(res.data)
-    console.log('res',res.data)
    }catch(err){
-     console.log(err)
-     console.log(c.productId,'c')
    }
   }
   fetchProduct()

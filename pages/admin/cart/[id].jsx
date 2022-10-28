@@ -1,10 +1,10 @@
+/* eslint-disable */
 import styles from '../../../styles/Cart.module.css'
 import CartItem from '../../../components/admin/CartItem'
 import axios from 'axios'
 
 const AdminCart = ({cart}) => {
 
- console.log(cart,'carrt')
   return (
    <div className={styles.Container}>
    <div className={styles.Bottom}>
@@ -38,14 +38,14 @@ export  const getServerSideProps = async(ctx)=>{
   try{
   const isAdmin = await axios.get('http://localhost:3000/api/admin',{headers:{token:cookies.token}})
   }catch(err){
-   console.log(err)
+    
 }
   let res
   try{
     res = await axios.get(`http://localhost:3000/api/cart/${ctx.query.id}`,{headers:{token:cookies?.token}})
-    console.log('res',res.data)
+    
   }catch(err){
-    console.log(err)
+    
   }
 
  return{

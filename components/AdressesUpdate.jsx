@@ -1,3 +1,4 @@
+/* eslint-disable */
 import styles from '../styles/Account.module.css'
 import { Delete } from '@material-ui/icons'
 import { updateInfo } from '../redux/userRedux'
@@ -24,7 +25,6 @@ const AdressesUpdate = ({currentUser,token,dispatch}) => {
  
     
    }catch(err){
-   console.log(err)
   }
 }
 
@@ -34,11 +34,10 @@ const AdressesUpdate = ({currentUser,token,dispatch}) => {
   }
   try{
   const res = await axios.put( `http://localhost:3000/api/user/${currentUser._id}`,req,{headers:{token:token}})
-  console.log(res.data)
+  
   dispatch(updateInfo(res.data))
   
  }catch(err){
-  console.log(err)
  }}
  const handleDeleteAddress = async(a)=>{
   const req = {
@@ -49,9 +48,8 @@ const AdressesUpdate = ({currentUser,token,dispatch}) => {
    const res = await axios.put( `http://localhost:3000/api/user/${currentUser?._id}`,req,{headers:{token:token}}) 
    dispatch(updateInfo(res.data))
 
-   console.log(res)
   }catch(err){
-  console.log(err)
+    
  }
  }
   return (

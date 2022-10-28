@@ -21,7 +21,7 @@ export const register = async (dispatch, user) => {
    return true
  } catch (err) {
    dispatch(loginFailure());
-   console.log(err)
+   
    return false
  }
 };

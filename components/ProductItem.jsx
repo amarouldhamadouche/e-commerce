@@ -1,3 +1,4 @@
+/* eslint-disable */
 import styles from '../styles/ProductItem.module.css'
 import Image from 'next/image'
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@material-ui/icons'
@@ -9,12 +10,10 @@ import {useState,useEffect} from 'react'
 
 const ProductItem = ({item}) => {
   const wishList = useSelector((state)=>state.cart.wishList)
-  console.log(wishList,'wish')
   const dispatch = useDispatch()
   const router = useRouter()
   const [isAddedToWishList,setIsAdded] = useState()
   useEffect(()=>{
-    console.log('test', wishList.findIndex((p)=>p._id==item._id) )
     wishList.find((p)=>p._id==item._id) ? setIsAdded(true) : setIsAdded(false)
   },[item._id,wishList])
   return (

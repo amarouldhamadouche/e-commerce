@@ -18,7 +18,7 @@ const Navbar = ({token}) => {
         const res = await axios.get('http://localhost:3000/api/product/find',{headers:{token:token}})
         setProducts(res.data)
       }catch(err){
-        console.log(err)
+        
       }
     }
     fetchProducts()
