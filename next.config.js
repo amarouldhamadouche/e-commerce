@@ -11,6 +11,4 @@ const nextConfig = {
 
 module.exports = nextConfig
 
-module.exports = {
-webpack5: false,
-}
+
