@@ -3,12 +3,12 @@ import styles from '../../styles/Admin.module.css'
 import axios from 'axios'
 import {useState} from 'react'
 import ProductList from '../../components/admin/ProductList'
-import AdminOrders from '../../components/admin/Orders'
-import Users from '../../components/admin/Users'
-import Chart from '../../components/admin/Chart'
+import AdminOrders from '../../components/Admin/Orders'
+import Users from '../../components/Admin/Users'
+import Chart from '../../components/Admin/Chart'
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
-import AdminContact from '../../components/admin/Contact'
+import AdminContact from '../../components/Admin/Contact'
 
 const Admin = ({token,Products,orders}) => {
 const [menu,setMenu] = useState('products')
