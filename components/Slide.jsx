@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import { ArrowLeftOutlined,ArrowRightOutlined } from "@material-ui/icons"
 import styles from '../styles/Slide.module.css'
-import Image from 'next/Image'
+import Image from 'next/image'
 
 const Slide = () => {
  const [index,setIndex] = useState(0)
