@@ -3,7 +3,7 @@ import styles from '../../styles/Admin.module.css'
 import axios from 'axios'
 import {useState} from 'react'
 import ProductList from '../../components/admin/ProductList'
-import AdminOrders from '../../components/Admin/Orders'
+import AdminOrders from '../../components/Admin/AdminOrders'
 import Users from '../../components/Admin/Users'
 import Chart from '../../components/Admin/Chart'
 import Navbar from "../../components/Navbar"
