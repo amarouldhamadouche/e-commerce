@@ -4,7 +4,7 @@ import {useState,useEffect} from 'react'
 import axios from 'axios'
 import styles from '../../styles/Users.module.css'
 import UserItem from './UserItem'
-import AdminOrders from './Orders'
+import AdminOrders from './adminorders'
 
 
 
