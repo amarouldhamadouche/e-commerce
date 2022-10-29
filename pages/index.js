@@ -41,7 +41,7 @@ export const getServerSideProps =  async(ctx)=>{
   return{
     props:{
       token : cookies?.token || null,
-      products:res.data
+      products:res.data || {}
     }
   }
   }

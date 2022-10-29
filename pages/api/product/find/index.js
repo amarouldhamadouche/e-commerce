@@ -4,8 +4,7 @@ import dbConnect from "../../../../util/mongo";
 
 const  handler = async(req,res)=>{
  const {method} = req
- dbConnect()
-
+ await dbConnect()
  if(method==="GET"){
    const qNew = req.query.new
    const qCategorie = req.query.categorie
