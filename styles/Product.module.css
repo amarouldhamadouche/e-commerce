@@ -21,8 +21,8 @@
 }
 
 .authorImages {
- width: 50px;
- height: 50px;
+ width: 80px;
+ height: 80px;
  position: relative;
  margin: 20px 5px;
  cursor: pointer;
@@ -114,6 +114,7 @@
  }
 
  .Title {
+  padding: 10px 0;
   font-size: 23px;
  }
 

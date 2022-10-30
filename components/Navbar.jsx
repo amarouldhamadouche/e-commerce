@@ -15,7 +15,7 @@ const Navbar = ({token}) => {
   useEffect(()=>{
     const fetchProducts = async()=>{
       try{
-        const res = await axios.get('https://amarouldhamadoucheecommerce.herokuapp.com/api/product/find')
+        const res = await axios.get('https://amarouldhamadoucheecommerce.herokuapp.com/api/product/find/')
         setProducts(res.data)
       }catch(err){
         
