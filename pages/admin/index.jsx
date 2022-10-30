@@ -65,7 +65,7 @@ export  const getServerSideProps = async(ctx)=>{
    }
   }
   try{
-  const isAdmin = await axios.get('http://localhost:3000/api/admin',{headers:{token:cookies.token}})
+  const isAdmin = await axios.get('https://amarouldhamadoucheecommerce.herokuapp.com/api/admin',{headers:{token:cookies.token}})
   }catch(err){
   if(err.response.status==403){
    return{
@@ -77,13 +77,13 @@ export  const getServerSideProps = async(ctx)=>{
   }}
   let res
   try{
-    res = await axios.get('http://localhost:3000/api/product/find')
+    res = await axios.get('https://amarouldhamadoucheecommerce.herokuapp.com/api/product/find')
   }catch(err){
     
   }
   let res1
   try{
-    res1 = await axios.get('http://localhost:3000/api/order?all=true',{headers:{token:cookies?.token}})
+    res1 = await axios.get('https://amarouldhamadoucheecommerce.herokuapp.com/api/order?all=true',{headers:{token:cookies?.token}})
   
   }catch(err){
     

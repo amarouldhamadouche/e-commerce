@@ -9,7 +9,7 @@ const AdminContact = ({token}) => {
  useEffect(()=>{
   const fetchContacts = async()=>{
    try{
-    const res = await axios.get("http://localhost:3000/api/contact",{headers:{token:token}})
+    const res = await axios.get("https://amarouldhamadoucheecommerce.herokuapp.com/api/contact",{headers:{token:token}})
     setContacts(res.data.sort((a,b)=>new Date(b.createdAt) - new Date(a.createdAt)))
    }catch(err){
    } 

@@ -10,7 +10,7 @@ const CartItem = ({c}) => {
  useEffect(()=>{
   const fetchProduct = async()=>{
    try{
-    const res = await axios.get(`http://localhost:3000/api/product/find/${c.productId}`)
+    const res = await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/product/find/${c.productId}`)
     setProduct(res.data)
    }catch(err){
    }

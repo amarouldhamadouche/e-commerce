@@ -18,7 +18,7 @@ const PasswordUpdate = ({currentUser,token}) => {
    password:newPassword
   }
   try{ 
-   const res = await axios.put( `http://localhost:3000/api/user/${currentUser._id}`,req,{headers:{token:token}})  
+   const res = await axios.put( `https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${currentUser._id}`,req,{headers:{token:token}})  
    setSuccess(true)
   }catch(err){
     if(err.response.data == "wrong credential"){

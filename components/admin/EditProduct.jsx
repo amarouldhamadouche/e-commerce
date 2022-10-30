@@ -24,7 +24,7 @@ const EditProduct = ({token,setEdit,setProducts,product}) => {
  useEffect(()=>{
   const fetchCat = async()=>{
    try{
-   const res = await axios.get("http://localhost:3000/api/categories",{headers:{token:token}})
+   const res = await axios.get("https://amarouldhamadoucheecommerce.herokuapp.com/api/categories",{headers:{token:token}})
    setCategories(res.data)
   }catch(err){
   }
@@ -39,7 +39,7 @@ const EditProduct = ({token,setEdit,setProducts,product}) => {
  try{
  const cloudinaryRes = await axios.post("https://api.cloudinary.com/v1_1/UrbanMobile/image/upload",data)
  const {url} = cloudinaryRes.data
-    const res = await axios.post('http://localhost:3000/api/categories',{name:categorieName,img:url},{headers:{token:token}})
+    const res = await axios.post('https://amarouldhamadoucheecommerce.herokuapp.com/api/categories',{name:categorieName,img:url},{headers:{token:token}})
     setCategories((prev)=>[...prev,res.data])
     setAddCategorie(false)
    }catch(err){
@@ -59,7 +59,7 @@ const EditProduct = ({token,setEdit,setProducts,product}) => {
      colors,
      price
     }
-    const res = await axios.put(`http://localhost:3000/api/product/${product._id}`,editedProduct,{headers:{token:token}})
+    const res = await axios.put(`https://amarouldhamadoucheecommerce.herokuapp.com/api/product/${product._id}`,editedProduct,{headers:{token:token}})
     setProducts((prev)=>[res.data,...prev.filter((p)=>p._id!==product._id)])
     setEdit(false)
     setIsFetching(false)

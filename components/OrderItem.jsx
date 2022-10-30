@@ -8,7 +8,7 @@ const [product,setProduct] = useState([])
  useEffect(()=>{
    const fetchProduct = async()=>{
     try{ 
-     const res = await axios.get(`http://localhost:3000/api/product/find/${Product.productId}`)
+     const res = await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/product/find/${Product.productId}`)
      setProduct(res.data)
     }catch(err){
       

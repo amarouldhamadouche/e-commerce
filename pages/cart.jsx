@@ -36,7 +36,7 @@ const OrderAlert = ({setCheckOut,token,setShowBlockedToast})=>{
 
   const createACart = async()=>{
     try{
-      const res = await axios.get(`http://localhost:3000/api/user/${currentUser?._id}`,{headers:{token:token}})
+      const res = await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${currentUser?._id}`,{headers:{token:token}})
       if(!res.data.isBlocked){
         if(!token){
           Router.push('/login')
@@ -47,7 +47,7 @@ const OrderAlert = ({setCheckOut,token,setShowBlockedToast})=>{
           amount:cart.total,
         }
        
-          const res = await axios.post(`http://localhost:3000/api/cart/`,req,{headers:{token:token}})
+          const res = await axios.post(`https://amarouldhamadoucheecommerce.herokuapp.com/api/cart/`,req,{headers:{token:token}})
           createAnOrder(res.data._id)
         }
       }else{
@@ -73,7 +73,7 @@ const OrderAlert = ({setCheckOut,token,setShowBlockedToast})=>{
       cartId
     }
     try{
-      const res = await axios.post(`http://localhost:3000/api/order/${currentUser?._id}`,req,{headers:{token:token}})
+      const res = await axios.post(`https://amarouldhamadoucheecommerce.herokuapp.com/api/order/${currentUser?._id}`,req,{headers:{token:token}})
       dispatch(orderTheCart())
       Router.push('/order')
     }catch(err){
@@ -94,7 +94,7 @@ const OrderAlert = ({setCheckOut,token,setShowBlockedToast})=>{
   useEffect(()=>{
     const ePayement = async()=>{
       try{
-       const res = await axios.post('http://localhost:3000/api/stripe/payement',{
+       const res = await axios.post('https://amarouldhamadoucheecommerce.herokuapp.com/api/stripe/payement',{
         tokenId:stripeToken.id,
         amount:2000
        })

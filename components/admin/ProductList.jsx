@@ -15,7 +15,7 @@ const ProductList = ({Products,token}) => {
 
  const handleDelete = async(id)=>{
   try{
-   const res = await axios.delete(`http://localhost:3000/api/product/${id}`,{headers:{token:token}})
+   const res = await axios.delete(`https://amarouldhamadoucheecommerce.herokuapp.com/api/product/${id}`,{headers:{token:token}})
    if(res.status==200){
     setProducts((prev)=>[...prev.filter((p)=>p._id!==id)])
    }

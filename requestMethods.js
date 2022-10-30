@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BaseUrl = 'http://localhost:3000/api/'
+const BaseUrl = 'https://amarouldhamadoucheecommerce.herokuapp.com/api/'
 
 const user = typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('persist:root'))?.user : ""
 const currentUser = user && JSON.parse(user).currentUser

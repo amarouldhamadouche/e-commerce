@@ -86,7 +86,7 @@ const ProductList = ({token,products}) => {
 export const getServerSideProps =  async(ctx)=>{
   const cookies = ctx.req?.cookies || null
   let cat = ctx.query.cat
-  const res =!cat ? await axios.get(`http://localhost:3000/api/product/find`) :  await axios.get(`http://localhost:3000/api/product/find?categorie=${cat}`)
+  const res =!cat ? await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/product/find`) :  await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/product/find?categorie=${cat}`)
   return {
     props : {
       token : cookies?.token || null,

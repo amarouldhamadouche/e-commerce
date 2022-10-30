@@ -20,7 +20,7 @@ const AdressesUpdate = ({currentUser,token,dispatch}) => {
    adresses:[...currentUser?.adresses, newAddress]
   }
   try{
-    const res = await axios.put( `http://localhost:3000/api/user/${currentUser?._id}`,req,{headers:{token:token}}) 
+    const res = await axios.put( `https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${currentUser?._id}`,req,{headers:{token:token}}) 
     dispatch(updateInfo(res.data))
  
     
@@ -33,7 +33,7 @@ const AdressesUpdate = ({currentUser,token,dispatch}) => {
    principleAddress:e.target.value
   }
   try{
-  const res = await axios.put( `http://localhost:3000/api/user/${currentUser._id}`,req,{headers:{token:token}})
+  const res = await axios.put( `https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${currentUser._id}`,req,{headers:{token:token}})
   
   dispatch(updateInfo(res.data))
   
@@ -45,7 +45,7 @@ const AdressesUpdate = ({currentUser,token,dispatch}) => {
    principleAddress:currentUser?.principleAddress == a._id ? "" : currentUser?.principleAddress
   }
   try{
-   const res = await axios.put( `http://localhost:3000/api/user/${currentUser?._id}`,req,{headers:{token:token}}) 
+   const res = await axios.put( `https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${currentUser?._id}`,req,{headers:{token:token}}) 
    dispatch(updateInfo(res.data))
 
   }catch(err){

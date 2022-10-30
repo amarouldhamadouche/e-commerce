@@ -18,7 +18,7 @@ const InformationUpdate = ({currentUser,dispatch,token}) => {
     setSuccess(false)
     setError(false)
     try{  
-    const res = await axios.put( `http://localhost:3000/api/user/${currentUser?._id}`,{name,lastName,username,email,phoneNumber},{headers:{token:token}}) 
+    const res = await axios.put( `https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${currentUser?._id}`,{name,lastName,username,email,phoneNumber},{headers:{token:token}}) 
     setSuccess(true)
     dispatch(updateInfo(res.data))
     }catch(err){
