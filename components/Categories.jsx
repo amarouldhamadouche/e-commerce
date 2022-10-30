@@ -10,7 +10,7 @@ export default function Categories(){
   useEffect(()=>{
     const fetchCats = async()=>{
       try{
-       const res = await axios.get('http://localhost:3000/api/categories')
+       const res = await axios.get('https://amarouldhamadoucheecommerce.herokuapp.com/api/categories')
        setCategories(res.data)
        
       }catch(err){
@@ -27,7 +27,7 @@ export default function Categories(){
       Categories
     </h1>
    {categories.length>0 && categories.map((c)=>(
-       <CategorieItem key={c._id} item={c}/>
+       <CategorieItem key={c._id} item={c}/> 
        ))}
     </div>
    

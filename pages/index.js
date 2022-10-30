@@ -39,7 +39,7 @@ export const getServerSideProps =  async(ctx)=>{
   const cookies = ctx.req?.cookies || null
   let res
   try{
-   res = await axios.get('http://localhost:3000/api/product/find?new=true')
+   res = await axios.get('https://amarouldhamadoucheecommerce.herokuapp.com/api/product/find?new=true')
   }catch(err){}
  return{
     props:{
