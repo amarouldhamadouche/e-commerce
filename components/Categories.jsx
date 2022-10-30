@@ -10,7 +10,7 @@ export default function Categories(){
   useEffect(()=>{
     const fetchCats = async()=>{
       try{
-       const res = await axios.get('https://amarouldhamadoucheecommerce.herokuapp.com/api/categories/')
+       const res = await axios.get("https://amarouldhamadoucheecommerce.herokuapp.com/api/categories/")
        setCategories(res.data)
        
       }catch(err){

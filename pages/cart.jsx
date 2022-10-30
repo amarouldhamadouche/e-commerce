@@ -198,7 +198,6 @@ const Cart = ({token}) => {
             <div className={styles.TopText} onClick={()=>setIndice('BAG')}>YOUR BAG({cart.products.length})</div>
             <div className={styles.TopText} onClick={()=>setIndice('WISHLIST')}>YOUR WISHLIST({cart.wishList.length})</div>
           </div>
-          <button className={styles.TopButton}>CHECKOUT NOW</button>
         </div>
         <div className={styles.Bottom}>
           <div className={styles.Products}>
