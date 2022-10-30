@@ -82,7 +82,7 @@
  }
 
  .Center {
-  font-size: 35px;
+  font-size: 25px;
  }
 
  .Right {
@@ -97,5 +97,9 @@
  .MenuItem2 {
   margin: 0 5px;
   font-size: 13px;
+ }
+
+ .MenuItem2:first-child {
+  display: none;
  }
 }
