@@ -29,7 +29,7 @@ export default function Home({token,products}) {
       <Slide/>
       <Categories  />
       {products && <Product home={true} products={products}/>}
-      <NewsLetter token={token}/> 
+      {token && <NewsLetter token={token}/> }
       <Footer/>
     </div>
   )
