@@ -113,6 +113,10 @@
   padding: 0;
  }
 
+ .Title {
+  font-size: 23px;
+ }
+
  .Left {
   display: flex;
   justify-content: center;
