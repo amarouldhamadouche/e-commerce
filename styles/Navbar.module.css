@@ -33,7 +33,7 @@
 .Center {
  flex: 1;
  text-align: center;
- font-size: 50px;
+ font-size: 55px;
  font-weight: 500;
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
  cursor: pointer;
@@ -82,7 +82,7 @@
  }
 
  .Center {
-  font-size: 25px;
+  font-size: 30px;
  }
 
  .Right {

@@ -33,8 +33,9 @@
 }
 
 .Title {
- font-size: 40px;
- font-weight: 300;
+ font-size: 50px;
+ font-weight: 500;
+ font-family: monospace;
 }
 
 .Desc {

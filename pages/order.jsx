@@ -44,8 +44,8 @@ useEffect(()=>{
     <div className={styles.container}>
       <h1 className={styles.title}>Check your orders</h1>
       <div className={styles.buttonContainer}>
-        <button onClick={()=>setActiveButton('current')} className={styles.button} style={{backgroundColor:activeButton=='current'?'teal':"white",border:activeButton=='current'?'none':'1px solid teal',color:activeButton=='current'?'white':'teal'}}>current orders</button>
-        <button onClick={()=>setActiveButton('old')} className={styles.button} style={{backgroundColor:activeButton=='old'?'teal':"white",border:activeButton=='old'?'none':'1px solid teal',color:activeButton=='old'?'white':'teal'}}>old orders</button>
+        <button onClick={()=>setActiveButton('current')} className={styles.button} style={{backgroundColor:"white",border:activeButton=='none',color:activeButton=='current'?'teal':'black'}}>current orders</button>
+        <button onClick={()=>setActiveButton('old')} className={styles.button} style={{backgroundColor:"white",border:'none',color:activeButton=='old'?'teal':'black'}}>old orders</button>
       </div>
       {orders &&  orders.filter((o)=>activeButton=='current' ? o.status<2:o.status>=2).map((o)=>(
       <>

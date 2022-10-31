@@ -6,7 +6,9 @@
 }
 
 .title {
- font-size: 30px;
+ font-size: 50px;
+ font-weight: 500;
+ font-family: monospace;
  margin: 20px 0;
 
  margin-left: 50px;
@@ -15,6 +17,7 @@
 .buttonContainer {
  width: 40%;
  margin-left: 50px;
+ text-decoration: underline;
 
 }
 
@@ -139,6 +142,8 @@
  opacity: 0;
 }
 
+
+
 .leftTitle {
  font-size: 20px;
  font-weight: 500;
@@ -152,6 +157,14 @@
 }
 
 @media only screen and (max-width:380px) {
+ .container {
+  padding-right: 0px;
+ }
+
+ .title {
+  font-size: 23px;
+ }
+
  .buttonContainer {
   width: 90%;
   margin-left: 10px;
@@ -159,6 +172,7 @@
 
  .orderItem {
   flex-direction: column;
+  align-items: center;
  }
 
  .table {
@@ -185,12 +199,10 @@
  }
 
  .leftText {
-  font-size: 18px;
+  font-size: 15px;
  }
 
- .leftText {
-  font-size: 18px;
- }
+
 
  .statusContainer {
   padding: 5px 10px;

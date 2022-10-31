@@ -5,8 +5,9 @@
 }
 
 .Title {
- font-size: 40px;
- font-weight: 300;
+ font-size: 50px;
+ font-weight: 500;
+ font-family: monospace;
 }
 
 .FilterContainer {
@@ -38,5 +39,9 @@
 @media only screen and (max-width:380px) {
  .FilterContainer {
   flex-direction: column;
+ }
+
+ .title {
+  font-size: 23px;
  }
 }

@@ -38,13 +38,8 @@ const OrderAlert = ({setCheckOut,token,setShowBlockedToast})=>{
     if (!token){
       return Router.push('/login')
     }
-    try{
-      const res = await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${currentUser?._id}`,{headers:{token:token}})
-      if(!res.data.isBlocked){
-        if(!token){
-          Router.push('/login')
-        }else{
-        const req = {
+    try{        
+       const req = {
           userId:currentUser?._id,
           products:products,
           amount:cart.total,
@@ -52,11 +47,6 @@ const OrderAlert = ({setCheckOut,token,setShowBlockedToast})=>{
        
           const res = await axios.post(`https://amarouldhamadoucheecommerce.herokuapp.com/api/cart/`,req,{headers:{token:token}})
           createAnOrder(res.data._id)
-        }
-      }else{
-        setCheckOut(false)
-        setShowBlockedToast(true)
-      }
     }catch(err){
 
     }
@@ -182,6 +172,21 @@ const Cart = ({token}) => {
   const [showBlockedToast,setShowBlockedToast] = useState(false)
   const [indice,setIndice] = useState('BAG')
   const [checkOut,setCheckOut] = useState(false)
+  
+  const handleCheckout = async()=>{
+    try{
+      const res = await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${currentUser?._id}`,{headers:{token:token}})
+      if(res?.data.isBlocked){
+        Router.push('/login')
+      }else{
+        setCheckOut(true)
+      }
+     
+    }catch(err){
+
+    }
+  }
+
   return (
     <div style={{position:'relative'}}>
       {showBlockedToast && <BlockedToast setShowBlockedToast={setShowBlockedToast}/> }
@@ -214,7 +219,7 @@ const Cart = ({token}) => {
               <b>Total:</b>
               <span>{cart.total} DA</span>
             </div>
-            <button className={styles.SummaryButton} onClick={()=>setCheckOut(true)}>CHECKOUT</button>
+            <button className={styles.SummaryButton} onClick={()=>handleCheckout}>CHECKOUT</button>
           </div>
         </div>
       </div>

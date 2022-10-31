@@ -1,7 +1,7 @@
 /* eslint-disable */
 import styles from '../styles/ProductItem.module.css'
 import Image from 'next/image'
-import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@material-ui/icons'
+import { FavoriteBorderOutlined, SearchOutlined } from '@material-ui/icons'
 import { useRouter } from 'next/router'
 import { useDispatch,useSelector } from 'react-redux'
 import {addToWishList,removeFromWishList} from '../redux/cartRedux'
@@ -22,9 +22,7 @@ const ProductItem = ({item}) => {
        <Image src={item.img[0]} alt='' layout='fill' objectFit='contain'/>
     </div>
     <div className={styles.Info}>
-      <div className={styles.Icon}>
-         <ShoppingCartOutlined/>
-       </div>
+      
        <div className={styles.Icon}>
          <SearchOutlined onClick={()=>router.push(`/product/${item._id}`)} />
        </div> 
