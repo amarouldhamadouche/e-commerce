@@ -219,7 +219,7 @@ const Cart = ({token}) => {
               <b>Total:</b>
               <span>{cart.total} DA</span>
             </div>
-            <button className={styles.SummaryButton} onClick={()=>handleCheckout}>CHECKOUT</button>
+            <button className={styles.SummaryButton} onClick={()=>handleCheckout()}>CHECKOUT</button>
           </div>
         </div>
       </div>
