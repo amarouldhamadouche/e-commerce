@@ -13,7 +13,7 @@ import Link from 'next/link'
 import axios from 'axios'
 import StripeCheckout from 'react-stripe-checkout'
 
-const OrderAlert = ({setCheckOut,token,setShowBlockedToast})=>{
+const OrderAlert = ({setCheckOut,token})=>{
   const currentUser = useSelector((state)=>state.user.currentUser)
   const wilaya = ['adrar','chlef','laghouat','alg']
   const [address,setAddress] = useState()
@@ -173,6 +173,8 @@ const Cart = ({token}) => {
   const [indice,setIndice] = useState('BAG')
   const [checkOut,setCheckOut] = useState(false)
   
+  const currentUser = useSelector((state)=>state.user.currentUser)
+  
   const handleCheckout = async()=>{
     try{
       const res = await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${currentUser?._id}`,{headers:{token:token}})
@@ -190,7 +192,7 @@ const Cart = ({token}) => {
   return (
     <div style={{position:'relative'}}>
       {showBlockedToast && <BlockedToast setShowBlockedToast={setShowBlockedToast}/> }
-      {checkOut && <OrderAlert setCheckOut={setCheckOut} token={token} setShowBlockedToast={setShowBlockedToast}/>}
+      {checkOut && <OrderAlert setCheckOut={setCheckOut} token={token} />}
       <Navbar token={token}/>
       <Anounecement/>
       <div className={styles.Container}>
