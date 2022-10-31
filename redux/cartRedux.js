@@ -18,14 +18,14 @@ const cartSlice = createSlice({
   },
   decreaseProduct:(state,action)=>{
    state.total-= Number(action.payload.product.price)
-   state.products = [action.payload,...state.products.filter((p)=>p.product.specificId!==action.payload.specificId)]
+   state.products = [action.payload,...state.products.filter((p)=>p.specificId!==action.payload.specificId)]
   },
   increaseProduct:(state,action)=>{
    state.total+= Number(action.payload.product.price)
-   state.products = [action.payload,...state.products.filter((p)=>p.product.specificId!==action.payload.product.specificId)]
+   state.products = [action.payload,...state.products.filter((p)=>p.specificId!==action.payload.specificId)]
   },
   removeProduct:(state,action)=>{
-   state.products=[...state.products.filter((p)=>p.product.specificId!==action.payload.product.specificId)]
+   state.products=[...state.products.filter((p)=>p.specificId!==action.product.specificId)]
    state.quantity -=1
    state.total-= action.payload.product.price * action.payload.quantity
   },
