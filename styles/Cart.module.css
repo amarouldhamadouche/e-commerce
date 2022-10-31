@@ -174,7 +174,7 @@
 }
 
 @media only screen and (max-width:380px) {
- title {
+ .title {
   font-size: 23px;
  }
 
