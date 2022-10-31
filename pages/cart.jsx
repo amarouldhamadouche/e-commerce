@@ -176,10 +176,10 @@ const Cart = ({token}) => {
   const handleCheckout = async()=>{
     try{
       const res = await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${currentUser?._id}`,{headers:{token:token}})
-      if(res?.data.isBlocked){
-        Router.push('/login')
-      }else{
+      if(!res?.data.isBlocked){
         setCheckOut(true)
+      }else{
+        setShowBlockedToast(true)
       }
      
     }catch(err){
