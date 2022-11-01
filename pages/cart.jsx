@@ -35,9 +35,7 @@ const OrderAlert = ({setCheckOut,token})=>{
   },[currentUser])   
 
   const createACart = async()=>{
-    if (!token){
-      return Router.push('/login')
-    }
+    
     try{        
        const req = {
           userId:currentUser?._id,
@@ -176,6 +174,9 @@ const Cart = ({token}) => {
   const currentUser = useSelector((state)=>state.user.currentUser)
   
   const handleCheckout = async()=>{
+    if (!token){
+      return Router.push('/login')
+    }
     try{
       const res = await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${currentUser?._id}`,{headers:{token:token}})
       if(!res?.data.isBlocked){
