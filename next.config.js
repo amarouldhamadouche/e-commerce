@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  swcMinify: true,eslint: {
+  swcMinify: true,
+  distDir: "build",
+  eslint: {
     ignoreDuringBuilds: true,
 },
   images: {
