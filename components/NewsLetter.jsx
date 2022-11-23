@@ -36,7 +36,7 @@ const NewsLetter = ({token}) => {
        Get timely update from your favorite product
      </div>
      <div className={styles.InputContainer}>
-       <input placeholder='Sebd us a message' value={message} onChange={(e)=>setMessage(e.target.value)} className={styles.Input} type='email'/>
+       <input placeholder='Send us a message' value={message} onChange={(e)=>setMessage(e.target.value)} className={styles.Input} type='email'/>
        <button className={styles.Button} onClick={()=>sendMessage()}>
           <Send/>
        </button>
