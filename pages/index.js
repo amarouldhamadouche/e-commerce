@@ -38,10 +38,14 @@ export default function Home({token,products}) {
 
 export const getServerSideProps =  async(ctx)=>{
   const cookies = ctx.req?.cookies || null
+  if (typeof window !== 'undefined') {
+   const hostname = window.location.hostname || '';
+
   let res
   try{
-   res = await axios.get('https://amarouldhamadoucheecommerce.herokuapp.com/api/product/find?new=true')
+   res =hostname && await axios.get({`${hostname}api/product/find?new=true`})
   }catch(err){}
+  }
  return{
     props:{
       token : cookies?.token || null,
