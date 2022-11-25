@@ -25,7 +25,7 @@ useEffect(()=>{
   const fetchOrder = async()=>{
   
     try{
-     const res = await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/order?userId=${currentUser._id}`,{
+     const res = typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/order?userId=${currentUser._id}`,{
        headers: {
          'token': token
        },
