@@ -28,7 +28,7 @@ export default function Home({token,products,categories}) {
        <Navbar token={token}/>
       <Anounecement/>
       <Slide/>
-      <Categories categories={gategories}  />
+      <Categories categories={categories}  />
       {products && <Product home={true} products={products}/>}
       {token && <NewsLetter token={token}/> }
       <Footer/>
