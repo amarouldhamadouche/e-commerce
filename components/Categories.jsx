@@ -1,24 +1,11 @@
 /* eslint-disable */
 import CategorieItem from "./CategorieItem"
 import styles from "../styles/Categories.module.css"
-import {useState,useEffect} from 'react'
 import axios from 'axios'
 
-export default function Categories(){
-  const [categories,setCategories] = useState([])
+export default function Categories({categories}){
 
-  useEffect(()=>{
-    const fetchCats = async()=>{
-      try{
-        const res = typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/categories/`)
-       setCategories(res.data)
-       
-      }catch(err){
-        
-      }
-    }
-    fetchCats()
-  },[])
+ 
 
   
   return (
