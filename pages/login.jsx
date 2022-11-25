@@ -15,7 +15,7 @@ const Login = ({token}) => {
   const loginRequest = async(e)=>{
     e.preventDefault()
     if(email&&password){
-     const res =typeof(window)!=="undefined" && await login(dispatch,{email,password})
+     const res = await login(dispatch,{email,password})
      res && Router.push('/')
     }
   }
