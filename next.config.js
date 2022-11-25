@@ -11,13 +11,13 @@ const nextConfig = {
   }
 }
 
-module.exports = nextConfig, async rewrites() {
+module.exports =[nextConfig, async rewrites() {
         return [
           {
             source: '/api/:path*',
             destination: '*',
           },
         ]
-      }
+      }]
 
 
