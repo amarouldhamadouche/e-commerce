@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BaseUrl = `${window.location.origin}/api/`
+const BaseUrl =  typeof window !== 'undefined' && `${window.location.origin}/api/`
 
 const user = typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('persist:root'))?.user : ""
 const currentUser = user && JSON.parse(user).currentUser
