@@ -39,13 +39,9 @@ export default function Home({token,products}) {
 export const getServerSideProps =  async(ctx)=>{
   const cookies = ctx.req?.cookies || null
   let res
-  try{
-
-  if (typeof window !== 'undefined') {
-    const hostname = window.location.hostname || '';
-    res =hostname && await axios.get(`${hostname}api/product/find?new=true`)
-   }
-   }catch(err){}
+  try{  res =await axios.get(`http://localhost:3000/api/product/find?new=true`)
+      }catch(err){}
+ 
   return{
     props:{
       token : cookies?.token || null,
