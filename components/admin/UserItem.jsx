@@ -7,7 +7,7 @@ const UserItem = ({User,setUsers,setViewOrder,token}) => {
 
   const blockUser = async(action)=>{
     try{
-       const resp = await axios.put(`${window.location.origin}/api/user/${User._id}`,{isBlocked:action},{headers:{token:token}})
+       const resp =typeof(window)!=="undefined" &&  await axios.put(`${window.location.origin}/api/user/${User._id}`,{isBlocked:action},{headers:{token:token}})
        setUsers((prev)=>[resp.data,...prev.filter((p)=>p._id!=User._id)])
     }catch(err){
     }
