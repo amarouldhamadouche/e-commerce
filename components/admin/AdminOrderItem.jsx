@@ -11,7 +11,7 @@ const AdminOrderItem = ({order,token,setOrders,usersOrders,setUsersOrders}) => {
  useEffect(()=>{
   const fetchUser = async()=>{
    try{
-    const res = await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${order.userId}`,{headers:{token:token}})
+    const res = typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/user/${order.userId}`,{headers:{token:token}})
     setUser(res.data)
    }catch(err){
    }
@@ -32,7 +32,7 @@ const AdminOrderItem = ({order,token,setOrders,usersOrders,setUsersOrders}) => {
 
  const changeStatus = async(i)=>{
   try{
-   const res = await axios.put(`https://amarouldhamadoucheecommerce.herokuapp.com/api/order/${order._id}`,{status:i},{headers:{token:token}})
+   const res = typeof(window)!=="undefined" && await axios.put(`${window.location.origin}/api/order/${order._id}`,{status:i},{headers:{token:token}})
     setOrders((prev)=>[res.data,...prev.filter((o)=>o._id!==order._id)])
     usersOrders && setUsersOrders((prev)=>[res.data,...prev.filter((o)=>o._id!==order._id)])
     i==2 && updateUser()
@@ -43,7 +43,7 @@ const AdminOrderItem = ({order,token,setOrders,usersOrders,setUsersOrders}) => {
 
  const handleSell =(order)=>{
   try{
-    const res = order.products.forEach(async(p)=>await axios.post('https://amarouldhamadoucheecommerce.herokuapp.com/api/sales/',{ProductId:p.productId,quantity:p.quantity},{headers:{token:token}}))
+    const res = order.products.forEach(async(p)=>typeof(window)!=="undefined" && await axios.post(`${window.location.origin}/api/sales/',{ProductId:p.productId,quantity:p.quantity},{headers:{token:token}}))
     }catch(err){
   }
  }
