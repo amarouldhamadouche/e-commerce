@@ -23,7 +23,7 @@ const AddProduct = ({token,setAdd,setProducts}) => {
  useEffect(()=>{
   const fetchCat = async()=>{
    try{
-   const res = typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/categories",{headers:{token:token}})
+   const res = typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/categories`,{headers:{token:token}})
    setCategories(res.data)
   }catch(err){
     
@@ -40,7 +40,7 @@ const AddProduct = ({token,setAdd,setProducts}) => {
  const cloudinaryRes = 
  axios.post("https://api.cloudinary.com/v1_1/UrbanMobile/image/upload",data)
  const {url} = cloudinaryRes.data
-    const res = typeof(window)!=="undefined" && await axios.post(`${window.location.origin}/api/categories',{name:categorieName,img:url},{headers:{token:token}})
+    const res = typeof(window)!=="undefined" && await axios.post(`${window.location.origin}/api/categories`,{name:categorieName,img:url},{headers:{token:token}})
     setCategories((prev)=>[...prev,res.data])
     setAddCategorie(false)
    }catch(err){
@@ -75,7 +75,7 @@ const AddProduct = ({token,setAdd,setProducts}) => {
      colors,
      price
     }
-    const res = typeof(window)!=="undefined" && await axios.post(`${window.location.origin}/api/product',product,{headers:{token:token}})
+    const res = typeof(window)!=="undefined" && await axios.post(`${window.location.origin}/api/product`,product,{headers:{token:token}})
     handleSell(res.data)
    }catch(err){
      setIsFetching(false)
@@ -85,7 +85,7 @@ const AddProduct = ({token,setAdd,setProducts}) => {
 
  const handleSell = async(product)=>{
   try{
-    const res = typeof(window)!=="undefined" && await axios.post(`${window.location.origin}/api/sales/',{ProductId:product._id,quantity:0},{headers:{token:token}})
+    const res = typeof(window)!=="undefined" && await axios.post(`${window.location.origin}/api/sales/`,{ProductId:product._id,quantity:0},{headers:{token:token}})
    
     setProducts((prev)=>[...prev,product])
     setAdd(false)
