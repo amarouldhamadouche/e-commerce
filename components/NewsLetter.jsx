@@ -16,7 +16,7 @@ const NewsLetter = ({token}) => {
     setSuccess(false)
     if(currentUser && message){
     try{
-     const res = await axios.post('https://amarouldhamadoucheecommerce.herokuapp.com/api/contact',{userName:currentUser?.username,text:message},{headers:{token:token}})
+     const res = typeof(window)!=="undefined" &&  await axios.post(`${window.location.origin}/api/contact`,{userName:currentUser?.username,text:message},{headers:{token:token}})
      setSuccess(true)
      setMessage('')
      setTimeout(()=>setSuccess(false),'5000')
