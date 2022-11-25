@@ -36,13 +36,13 @@ export  const getServerSideProps = async(ctx)=>{
    }
   }
   try{
-  const isAdmin = await axios.get('https://amarouldhamadoucheecommerce.herokuapp.com/api/admin',{headers:{token:cookies.token}})
+  const isAdmin = await axios.get(`https://${ctx.req.rawHeaders[1]}/api/admin`,{headers:{token:cookies.token}})
   }catch(err){
     
 }
   let res
   try{
-    res = await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/cart/${ctx.query.id}`,{headers:{token:cookies?.token}})
+    res = await axios.get(`https://${ctx.req.rawHeaders[1]}/api/cart/${ctx.query.id}`,{headers:{token:cookies?.token}})
     
   }catch(err){
     
