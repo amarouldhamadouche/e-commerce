@@ -65,7 +65,7 @@ export  const getServerSideProps = async(ctx)=>{
    }
   }
   try{
-  const isAdmin = await axios.get(`https:${ctx.req.rawHeaders[1]}/api/admin`,{headers:{token:cookies.token}})
+  const isAdmin = await axios.get(`https://${ctx.req.rawHeaders[1]}/api/admin`,{headers:{token:cookies.token}})
   }catch(err){
   if(err.response.status==403){
    return{
