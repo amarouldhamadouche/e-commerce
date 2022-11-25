@@ -29,7 +29,7 @@ const sendRequest = async(e)=>{
   if(!name || !lastName || !username || !email || !password || !confirmPassword || password!==confirmPassword){
      return
   }else {
-     const res =typeof(window)!=="undefined" &&  await register(dispatch,{name,lastName,username,email,password,phoneNumber})
+     const res = await register(dispatch,{name,lastName,username,email,password,phoneNumber})
      res ? Router.push('/') : setError(true)
  
   }
