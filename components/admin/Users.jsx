@@ -16,7 +16,7 @@ const Users = ({token,setOrders}) => {
  useEffect(()=>{
    const fetchUsers = async()=>{
     try{
-     const res = await axios.get(``${window.location.origin}/api/user/`,{headers:{token:token}})
+     const res =typeof(window)!=="undefined" &&  await axios.get(`${window.location.origin}/api/user/`,{headers:{token:token}})
      setUsers(res.data)
     }catch(err){
     }
