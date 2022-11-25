@@ -95,7 +95,7 @@ const Product = ({token,product}) => {
 
 export const getServerSideProps = async(ctx)=>{
   const cookies = ctx.req?.cookies || null
-  const res = await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/product/find/${ctx.query.id}`)
+  const res = await axios.get(`https://${ctx.req.rawHeaders[1]}/api/product/find/${ctx.query.id}`)
   return{
   props:{
       token : cookies?.token || null,
