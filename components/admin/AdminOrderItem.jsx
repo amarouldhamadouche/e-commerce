@@ -43,7 +43,7 @@ const AdminOrderItem = ({order,token,setOrders,usersOrders,setUsersOrders}) => {
 
  const handleSell =(order)=>{
   try{
-    const res = order.products.forEach(async(p)=>typeof(window)!=="undefined" && await axios.post(`${window.location.origin}/api/sales/',{ProductId:p.productId,quantity:p.quantity},{headers:{token:token}}))
+    const res = order.products.forEach(async(p)=>typeof(window)!=="undefined" && await axios.post(`${window.location.origin}/api/sales/`,{ProductId:p.productId,quantity:p.quantity},{headers:{token:token}}))
     }catch(err){
   }
  }
