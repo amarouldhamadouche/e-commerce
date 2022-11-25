@@ -10,7 +10,7 @@ export default function Categories(){
   useEffect(()=>{
     const fetchCats = async()=>{
       try{
-       const res = await axios.get("https://e-commerce-8b19vvq3h-amarouldhamadouche.vercel.app/api/categories/")
+        const res = typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/categories/`)
        setCategories(res.data)
        
       }catch(err){
