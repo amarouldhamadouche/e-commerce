@@ -12,7 +12,7 @@ const AdminOrders = ({token,Orders,userId,setOrders}) => {
   useEffect(()=>{
     const fetchUserOrder = async()=>{
       try{
-        const res = await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/order?userId=${userId}`,{headers:{token:token}})
+        const res = typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/order?userId=${userId}`,{headers:{token:token}})
         setUsersOrders(res.data)
       }catch(err){
       }
