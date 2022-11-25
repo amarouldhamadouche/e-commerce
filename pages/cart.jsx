@@ -43,7 +43,7 @@ const OrderAlert = ({setCheckOut,token})=>{
           amount:cart.total,
         }
        
-          const res = await axios.post(`https://amarouldhamadoucheecommerce.herokuapp.com/api/cart/`,req,{headers:{token:token}})
+          const res = typeof(window)!=="undefined" && await axios.post(`${window.location.origin}/api/cart/`,req,{headers:{token:token}})
           createAnOrder(res.data._id)
     }catch(err){
 
@@ -64,7 +64,7 @@ const OrderAlert = ({setCheckOut,token})=>{
       cartId
     }
     try{
-      const res = await axios.post(`https://amarouldhamadoucheecommerce.herokuapp.com/api/order/${currentUser?._id}`,req,{headers:{token:token}})
+      const res = typeof(window)!=="undefined" && await axios.post( `${window.location.origin}/api/order/${currentUser?._id}`,req,{headers:{token:token}})
       dispatch(orderTheCart())
       Router.push('/order')
     }catch(err){
@@ -85,7 +85,7 @@ const OrderAlert = ({setCheckOut,token})=>{
   useEffect(()=>{
     const ePayement = async()=>{
       try{
-       const res = await axios.post('https://amarouldhamadoucheecommerce.herokuapp.com/api/stripe/payement',{
+       const res = typeof(window)!=="undefined" && await axios.post( `${window.location.origin}/api/stripe/payement`,{
         tokenId:stripeToken.id,
         amount:2000
        })
@@ -178,7 +178,7 @@ const Cart = ({token}) => {
       return Router.push('/login')
     }
     try{
-      const res = await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${currentUser?._id}`,{headers:{token:token}})
+      const res = typeof(window)!=="undefined" && await axios.get( `${window.location.origin}/api/user/${currentUser?._id}`,{headers:{token:token}})
       if(!res?.data.isBlocked){
         setCheckOut(true)
       }else{
