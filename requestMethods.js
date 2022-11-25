@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BaseUrl = 'https://amarouldhamadoucheecommerce.herokuapp.com/api/'
+const BaseUrl = `${window.location.origin}/api/`
 
 const user = typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('persist:root'))?.user : ""
 const currentUser = user && JSON.parse(user).currentUser
@@ -10,7 +10,7 @@ export const publicRequest = axios.create({
  baseURL:BaseUrl,
 })
 
-export const userRequest = axios.create({
+export const userRequest =  axios.create({
  baseURL:BaseUrl,
  headers:{token:token}
 })
