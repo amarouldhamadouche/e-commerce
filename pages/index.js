@@ -11,7 +11,7 @@ import {updateInfo} from '../redux/userRedux'
 import { useDispatch } from 'react-redux'
 import {useEffect} from 'react'
 
-export default function Home({token,products}) {
+export default function Home({token,products,categories}) {
   const dispatch = useDispatch()
  useEffect(()=>{
    !token && dispatch(updateInfo(null))
@@ -28,7 +28,7 @@ export default function Home({token,products}) {
        <Navbar token={token}/>
       <Anounecement/>
       <Slide/>
-      <Categories  />
+      <Categories categories={gategories}  />
       {products && <Product home={true} products={products}/>}
       {token && <NewsLetter token={token}/> }
       <Footer/>
@@ -39,13 +39,19 @@ export default function Home({token,products}) {
 export const getServerSideProps =  async(ctx)=>{
   const cookies = ctx.req?.cookies || null
   let res
-  try{  res =await axios.get(`https://${ctx.req.rawHeaders[1]}/api/product/find?new=true`)
-      }catch(err){}
- 
+  try{ 
+    res =await axios.get(`https://${ctx.req.rawHeaders[1]}/api/product/find?new=true`)
+   }catch(err){}
+ let res1
+  try{ 
+    res =await axios.get(`https://${ctx.req.rawHeaders[1]}/api/categories/`)
+   }catch(err){}
+   
   return{
     props:{
       token : cookies?.token || null,
-      products:res?.data || {}
+      products:res?.data || {},
+      categories:res1?.data || {}
     }
   }
   }
