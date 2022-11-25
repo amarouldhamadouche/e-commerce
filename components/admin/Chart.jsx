@@ -22,7 +22,7 @@ const Chart = ({token,productId}) => {
  useEffect(()=>{
    const saleData = async()=>{
     try{
-     const res =activeButton == "products" ? productId ? typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/sales/${productId}`,{headers:{token:token}}) : typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/sales',{headers:{token:token}}) : typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/user/stats/',{headers:{token:token}})
+     const res =activeButton == "products" ? productId ? typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/sales/${productId}`,{headers:{token:token}}) : typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/sales`,{headers:{token:token}}) : typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/user/stats/`,{headers:{token:token}})
      setData([])
      setSaleData(res.data)
      !productId ? fetchProducts(res.data) : setData([{month:res.data[0]._id,total : res.data[0].total}])
