@@ -22,7 +22,7 @@ const Chart = ({token,productId}) => {
  useEffect(()=>{
    const saleData = async()=>{
     try{
-     const res =activeButton == "products" ? productId ? await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/sales/${productId}`,{headers:{token:token}}) : await axios.get('https://amarouldhamadoucheecommerce.herokuapp.com/api/sales',{headers:{token:token}}) : await axios.get('https://amarouldhamadoucheecommerce.herokuapp.com/api/user/stats/',{headers:{token:token}})
+     const res =activeButton == "products" ? productId ? typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/sales/${productId}`,{headers:{token:token}}) : typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/sales',{headers:{token:token}}) : typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/user/stats/',{headers:{token:token}})
      setData([])
      setSaleData(res.data)
      !productId ? fetchProducts(res.data) : setData([{month:res.data[0]._id,total : res.data[0].total}])
@@ -35,7 +35,7 @@ const Chart = ({token,productId}) => {
    const fetchProducts = async(Data)=>{
     if(activeButton=="products"){
      try{ 
-      Data.forEach(async(s)=>{ await axios.get(`https://amarouldhamadoucheecommerce.herokuapp.com/api/product/find/${s._id}`).then((res)=>{
+      Data.forEach(async(s)=>{ typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/product/find/${s._id}`).then((res)=>{
       setData((prev)=>[...prev,{name:!productId && res?.data?.title || "no disponible",total:s.total}])}).catch((err)=>{})
      })
     }catch(err){
