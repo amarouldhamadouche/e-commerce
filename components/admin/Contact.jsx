@@ -9,7 +9,7 @@ const AdminContact = ({token}) => {
  useEffect(()=>{
   const fetchContacts = async()=>{
    try{
-    const res = typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/contact",{headers:{token:token}})
+    const res = typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/contact`,{headers:{token:token}})
     setContacts(res.data.sort((a,b)=>new Date(b.createdAt) - new Date(a.createdAt)))
    }catch(err){
    } 
