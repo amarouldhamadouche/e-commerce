@@ -4,7 +4,7 @@ import dbConnect from "../../../util/mongo";
 
 const  handler = async(req,res)=>{
  const {method} = req
- dbConnect()
+ await dbConnect()
  if (method==='POST'){
     const newCategorie = new Categories(req.body)
     try{
