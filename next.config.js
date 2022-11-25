@@ -18,6 +18,6 @@ module.exports = nextConfig, async rewrites() {
             destination: '*',
           },
         ]
-      },
+      }
 
 
