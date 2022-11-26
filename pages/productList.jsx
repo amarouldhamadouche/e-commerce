@@ -86,7 +86,7 @@ const ProductList = ({token,products}) => {
 export const getServerSideProps =  async(ctx)=>{
   const cookies = ctx.req?.cookies || null
   let cat = ctx.query.cat
-  const res =!cat ? await axios.get(`https://${ctx.req.rawHeaders[1]}/api/product/find`) :  await axios.get(`https://${ctx.req.rawHeaders[1]}/product/api/find?categorie=${cat}`)
+  const res =!cat ? await axios.get(`https://${ctx.req.rawHeaders[1]}/api/product/find`) :  await axios.get(`https://${ctx.req.rawHeaders[1]}/api//product/find?categorie=${cat}`)
   return {
     props : {
       token : cookies?.token || null,
