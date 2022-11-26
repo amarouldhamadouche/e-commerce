@@ -11,7 +11,7 @@ import {updateInfo} from '../redux/userRedux'
 import { useDispatch } from 'react-redux'
 import {useEffect} from 'react'
 
-export default function Home({token,products,categories}) {
+export default function Home({token,products}) {
   const dispatch = useDispatch()
  useEffect(()=>{
    !token && dispatch(updateInfo(null))
@@ -42,16 +42,11 @@ export const getServerSideProps =  async(ctx)=>{
   try{ 
     res =await axios.get(`https://${ctx.req.rawHeaders[1]}/api/product/find?new=true`)
    }catch(err){}
- let res1
-  try{ 
-    res1 =await axios.get(`https://${ctx.req.rawHeaders[1]}/api/categories/`)
-   }catch(err){}
    
   return{
     props:{
       token : cookies?.token || null,
       products:res?.data || {},
-      categories:res1?.data || {}
     }
   }
   }
