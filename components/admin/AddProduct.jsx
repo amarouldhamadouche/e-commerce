@@ -37,8 +37,7 @@ const AddProduct = ({token,setAdd,setProducts}) => {
   data.append('file',categorieFile)
   data.append('upload_preset','mqfwolev')
  try{
- const cloudinaryRes = 
- axios.post("https://api.cloudinary.com/v1_1/UrbanMobile/image/upload",data)
+ const cloudinaryRes = await axios.post("https://api.cloudinary.com/v1_1/UrbanMobile/image/upload",data)
  const {url} = cloudinaryRes.data
     const res = typeof(window)!=="undefined" && await axios.post(`${window.location.origin}/api/categories`,{name:categorieName,img:url},{headers:{token:token}})
     setCategories((prev)=>[...prev,res.data])
