@@ -15,7 +15,7 @@ const ProductList = ({Products,token}) => {
 
  const handleDelete = async(id)=>{
   try{
-   const res = typeof(window)!=="undefined" && await axios.get(`${window.location.origin}/api/product/${id}`,{headers:{token:token}})
+   const res = typeof(window)!=="undefined" && await axios.delete(`${window.location.origin}/api/product/${id}`,{headers:{token:token}})
    if(res.status==200){
     setProducts((prev)=>[...prev.filter((p)=>p._id!==id)])
    }
