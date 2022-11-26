@@ -44,7 +44,7 @@ export const getServerSideProps =  async(ctx)=>{
    }catch(err){}
  let res1
   try{ 
-    res =await axios.get(`https://${ctx.req.rawHeaders[1]}/api/categories/`)
+    res1 =await axios.get(`https://${ctx.req.rawHeaders[1]}/api/categories/`)
    }catch(err){}
    
   return{
