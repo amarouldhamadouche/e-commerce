@@ -22,7 +22,7 @@ const AdminOrderItem = ({order,token,setOrders,usersOrders,setUsersOrders}) => {
 
  const updateUser = async()=>{
   try{
-    axios.put(`https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${user._id}`,{hasPaid:user.hasPaid + order.amount},{headers:{token:token}})
+    await axios.put(`https://amarouldhamadoucheecommerce.herokuapp.com/api/user/${user._id}`,{hasPaid:user.hasPaid + order.amount},{headers:{token:token}})
     }catch(err){
     }
   }
