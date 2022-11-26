@@ -2,7 +2,7 @@
 import CategorieItem from "./CategorieItem"
 import styles from "../styles/Categories.module.css"
 import axios from 'axios'
-import {useState,useEffect} gtom 'react'
+import {useState,useEffect} from 'react'
 
 export default function Categories(){
 const [categories,setCategories] = useState([])
