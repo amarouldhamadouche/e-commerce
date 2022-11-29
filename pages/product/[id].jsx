@@ -40,7 +40,7 @@ const Product = ({token,product}) => {
        <div className={styles.heroImageContainer}>
         <Image src={heroImage} alt='' layout='fill' objectFit='contain'/>
        </div>
-       <div style={{width:"100%",height:"80px",display:"flex",justifyContent:'center'}}>
+       <div style={{width:"100%",height:"120px",display:"flex",justifyContent:'center'}}>
         
         {product.img.filter(i=>i!==heroImage).map((pi,i)=>
            (
