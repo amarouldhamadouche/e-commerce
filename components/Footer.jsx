@@ -11,7 +11,7 @@ const Footer = () => {
         Amar.
        </h1>
        <div className={styles.Desc}>
-        there are many there are many there are many there are many there are many there are many there are many there are many there are many there are many there are many there are many there are many
+        there are many ecommerce websites but our is the best, we provide a search engine optimization for you to help you find your desired product quickly,an e-payment method so you can pay directly from the website and mush more, feel free to contact us 
        </div>
        <div className={styles.SocialLinks}>
         <Link href={"https://www.facebook.com/profile.php?id=100007073805383"} passHref>
@@ -77,7 +77,6 @@ const Footer = () => {
        <div className={styles.ContactItem}>
         <Mail style={{marginRight:'10px'}}/> Amarouldhamadouche0@gmail.com
        </div>
-        <Image src='https://i.ibb.co/Qfvn4z6/payemant.png' alt='' width='250' height='100'  objectFit='contain' style={{cursor:'pointer'}} />
       </div>
     </div>
   )
