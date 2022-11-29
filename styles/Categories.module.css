@@ -5,6 +5,7 @@
  flex-wrap: wrap;
  overflow: hidden;
  position: relative;
+ background-color: whitesmoke
 }
 
 .Title {
