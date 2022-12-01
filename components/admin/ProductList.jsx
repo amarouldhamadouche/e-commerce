@@ -24,7 +24,7 @@ const ProductList = ({Products,token}) => {
 }
   return (
   !viewStatistic ?
-   <div className={styles.products}>
+   <div className={styles.products} style={{position: "relative"}}>
    
     {add && <AddProduct token={token} setAdd={setAdd} setProducts={setProducts}  />}
   <button onClick={()=>setAdd(true)} style={{padding:'10px',fontSize:'15px',color:'teal',border:'1px solid teal',backgroundColor:'white', cursor:'pointer'}}>
