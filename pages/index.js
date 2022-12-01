@@ -35,7 +35,7 @@ export default function Home({token,products}) {
 }
 
 export const getServerSideProps =  async(ctx)=>{
-  const cookies = ctx.req?.cookies || null
+  const cookies =await  ctx.req?.cookies || null
   let res
   try{ 
     res =await axios.get(`https://${ctx.req.rawHeaders[1]}/api/product/find?new=true`)
