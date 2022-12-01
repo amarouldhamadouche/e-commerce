@@ -13,9 +13,7 @@ import {useEffect} from 'react'
 
 export default function Home({token,products}) {
   const dispatch = useDispatch()
- useEffect(()=>{
-   !token && dispatch(updateInfo(null))
- },[token])
+
 
   return (
     <div >
