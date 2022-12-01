@@ -98,7 +98,7 @@ const OrderAlert = ({setCheckOut,token})=>{
   },[stripeToken])
   
   return (
-    <div style={{position:'absolute',zIndex:"999",display:'flex',flexDirection:"column",alignItems:"center",paddingTop:"20vh",top:0,right:0,left:0,bottom:0,backgroundColor:'rgba(000,000,000,0.5)'}}>
+    <div style={{position:'fixed',zIndex:"999",display:'flex',flexDirection:"column",alignItems:"center",justifyContent:"center",width:"100vw",height:"100vh",top:0,left:0,backgroundColor:'rgba(000,000,000,0.5)'}}>
       
       <div className={styles.orderAlert}>
        <div onClick={()=>setCheckOut(false)} style={{position:'absolute',width:"30px",height:'30px',borderRadius:'50%',backgroundColor:'crimson',display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer',color:'white',right:"-10px",top:'-10px'}}>X</div>
