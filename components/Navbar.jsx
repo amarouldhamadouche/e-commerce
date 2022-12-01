@@ -51,11 +51,11 @@ const Navbar = ({token}) => {
      </Link>
      
      <div className={styles.Right}>
-     {!currentUser && !token &&
+     {!token &&
      <Link href={"/register"} passHref>
        <span className={styles.MenuItem2}>Sign up</span>
        </Link>}
-       {!currentUser && !token &&
+       {!token &&
      <Link href={"/login"} passHref>
        <span className={styles.MenuItem2}>Sign in</span>
        </Link>}
@@ -66,7 +66,7 @@ const Navbar = ({token}) => {
          </Badge>
        </Link>
        </span>
-       {currentUser && token &&
+       {token &&
        <Link href={'/account'} passHref>
        <span className={styles.MenuItem}>
          <AccountCircleOutlined color='action'/>
