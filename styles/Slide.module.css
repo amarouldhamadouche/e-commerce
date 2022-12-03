@@ -3,7 +3,7 @@
  height: 100vh;
  position: relative;
  overflow: hidden;
- background : linear-gradient(#0080808,#2271A4)
+ background : linear-gradient(teal,#2271A4)
 }
 
 .Arrow {
