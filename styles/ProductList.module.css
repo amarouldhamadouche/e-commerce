@@ -1,6 +1,6 @@
 .Container {
  min-height: calc(100vh - 200px);
- padding: 0px 20px;
+ padding: 20px;
  margin-bottom: 20px;
 }
 
