@@ -79,21 +79,21 @@
  font-size: 40px;
  font-weight: 500;
  font-family: monospace;
- color : "white"
+ color : white
 }
 
 .Desc {
  font-size: 20px;
  letter-spacing: 5px;
  margin-bottom: 40px;
- color : "white"
+ color : white
 }
 
 .Button {
  padding: 10px 0;
  width: 100px;
  background-color: transparent;
- display : "none";
+ display :none;
  cursor: pointer
 }
 
