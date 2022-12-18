@@ -35,7 +35,7 @@ const Navbar = ({token}) => {
          <input className={styles.Input} value={query} onChange={(e)=>setQuery(e.target.value)} placeholder="Search"/>
          <Search/>
        </div>
-       <ul style={{position:"absolute",backgroundColor:"white",padding:0,listStyle:"none",width:"100%",boxShadow:"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"}}>
+       <ul style={{position:"absolute",backgroundColor:"white",color:"white",padding:0,listStyle:"none",width:"100%",boxShadow:"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"}}>
            {query && products?.filter((p)=>p.title.toLowerCase().includes(query.toLowerCase())).map((p)=>(
             <Link key={p._id} href={`/product/${p._id}`} passHref>
              <li style={{padding:"10px",cursor:"pointer",fontSize:"18px"}}>{p.title} </li>
