@@ -138,7 +138,7 @@ const OrderAlert = ({setCheckOut,token})=>{
         </div>
         </div>)}
         <span style={{marginTop:'10px'}}>PAYEMENT METHOD</span>
-        <button style={{backgroundColor:'teal',padding:"10px",color:"white",fontWeight:"500",cursor:"pointer",border:'none',margin:'10px 0'}} onClick={()=>createACart()} >CASH</button>
+        <button style={{backgroundColor:'teal',padding:"10px",color:"white",fontWeight:"500",cursor:"pointer",border:'none',margin:'10px 0'}} onClick={()=>{addAnotherAddress && anotherAddress ||  address && createACart()}} >CASH</button>
         <StripeCheckout
           name="amar shop"
           description= {`your total is ${cart.total/200} $`}
