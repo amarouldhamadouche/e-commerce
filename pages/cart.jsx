@@ -35,7 +35,7 @@ const OrderAlert = ({setCheckOut,token})=>{
   },[currentUser])   
 
   const createACart = async()=>{
-    
+    if((anotherAddress ||  address){
     try{        
        const req = {
           userId:currentUser?._id,
@@ -47,7 +47,7 @@ const OrderAlert = ({setCheckOut,token})=>{
           createAnOrder(res.data._id)
     }catch(err){
 
-    }
+    }}
     
   }
 
@@ -138,7 +138,7 @@ const OrderAlert = ({setCheckOut,token})=>{
         </div>
         </div>)}
         <span style={{marginTop:'10px'}}>PAYEMENT METHOD</span>
-        <button style={{backgroundColor:'teal',padding:"10px",color:"white",fontWeight:"500",cursor:"pointer",border:'none',margin:'10px 0'}} onClick={()=>{addAnotherAddress && anotherAddress && createACart ||  address && createACart}} >CASH</button>
+        <button style={{backgroundColor:'teal',padding:"10px",color:"white",fontWeight:"500",cursor:"pointer",border:'none',margin:'10px 0'}} onClick={()=>createACart()} >CASH</button>
         <StripeCheckout
           name="amar shop"
           description= {`your total is ${cart.total/200} $`}
