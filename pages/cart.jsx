@@ -17,7 +17,7 @@ const OrderAlert = ({setCheckOut,token})=>{
   const currentUser = useSelector((state)=>state.user.currentUser)
   const wilaya = ['adrar','chlef','laghouat','alg']
   const [address,setAddress] = useState()
-  const [anotherAddress,setAnotherAddress] = useState(null)
+  const [anotherAddress,setAnotherAddress] = useState([])
   const [addAnotherAddress,setAddAnotherAddress] =useState(false)
   const [payementMethod,setPayementMethod] = useState('cash')
   const [products,setProducts] = useState([])
@@ -35,7 +35,7 @@ const OrderAlert = ({setCheckOut,token})=>{
   },[currentUser])   
 
   const createACart = async()=>{
-    if(anotherAddress ||  currentUser?.adresses.length>0){
+    if(Object.keys(anotherAddress).length>0 ||  currentUser?.adresses.length>0){
     try{        
        const req = {
           userId:currentUser?._id,
