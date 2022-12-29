@@ -31,7 +31,7 @@ const OrderAlert = ({setCheckOut,token})=>{
      },[cart])
 
   useEffect(()=>{
-    setAddress([...currentUser?.adresses.find((p)=>p._id==currentUser.principleAddress)])
+    setAddress({...currentUser?.adresses.find((p)=>p._id==currentUser.principleAddress)})
   },[currentUser])   
 
   const createACart = async()=>{
