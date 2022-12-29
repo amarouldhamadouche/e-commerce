@@ -35,7 +35,7 @@ const OrderAlert = ({setCheckOut,token})=>{
   },[currentUser])   
 
   const createACart = async()=>{
-    if(anotherAddress.length>0 ||  currentUser?.adresses.length>0){
+    if(anotherAddress ||  currentUser?.adresses.length>0){
     try{        
        const req = {
           userId:currentUser?._id,
