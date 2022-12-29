@@ -73,7 +73,7 @@ const OrderAlert = ({setCheckOut,token})=>{
   }
 
   const handleAddAnotherAddress =(e) =>{
-    setAnotherAddress([...anotherAddress,[e.target.name]:e.target.value])
+    setAnotherAddress({...anotherAddress,[e.target.name]:e.target.value})
   }
   const [stripeToken,setStripeToken] = useState(null)
   const Key = "pk_test_51LvpBIB7cQd4u2XGDde6BI5OzbmUaJ4L4HXC0CWo9NIsRQa7Rm4LhnROjpm2XjX34WxBR8fxKL33bNeH1xLz8KbF0037lkb3S2"
